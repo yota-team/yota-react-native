@@ -11,7 +11,7 @@ import {
   Text,
   View
 } from 'react-native';
-
+import HeatmapTest from './src/heatmapTest'
 
 export default class MapTest extends Component {
   render() {

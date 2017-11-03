@@ -42,10 +42,10 @@ class HeatmapTest extends React.Component {
         });
       },
       (error) => {
-        // alert('eror')
+        alert(JSON.stringify(error))
         this.setState({ error: error.message })
       },
-      { enableHighAccuracy: true, timeout: 50000, maximumAge: 5000 },
+      { enableHighAccuracy: true, timeout: 10000},
     );
     // this.watchId = navigator.geolocation.watchPosition(
     //   (position) => {
@@ -100,7 +100,8 @@ class HeatmapTest extends React.Component {
       >
         <MapView.Heatmap points={this.state.points} />
       </MapView>
-      <View style={{width: 300, height: 190, backgroundColor: '#fff', opacity: 0.7, padding: 15, }}>
+      <View style={{width: 300, height: 190, backgroundColor: '#fff', opacity: 0.7, padding: 15, borderRadius: 15,}}>
+        <Text>{this.state.latitude}</Text>
         <TimeSlider/>
       </View>
 
