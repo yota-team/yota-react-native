@@ -1,4 +1,4 @@
-#Fri Nov 03 09:17:08 WIB 2017
-base.0=/Users/hacktiv8/Desktop/anto/yota/yota-react-native/android/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main
+#Thu Nov 02 17:41:34 WIB 2017
+base.0=/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main
 renamed.0=classes.dex
-file.0=/Users/hacktiv8/Desktop/anto/yota/yota-react-native/android/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex
+file.0=/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex
