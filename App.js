@@ -12,6 +12,8 @@ import {
   View
 } from 'react-native';
 
+import TimeSlider from './src/screens/TimeSlider'
+
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
     'Cmd+D or shake for dev menu',
@@ -23,7 +25,7 @@ export default class App extends Component<{}> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
+        {/* <Text style={styles.welcome}>
           Welcome to React Native!
         </Text>
         <Text style={styles.instructions}>
@@ -31,7 +33,8 @@ export default class App extends Component<{}> {
         </Text>
         <Text style={styles.instructions}>
           {instructions}
-        </Text>
+        </Text> */}
+        <TimeSlider/>
       </View>
     );
   }
@@ -41,7 +44,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
+    // alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
   welcome: {
