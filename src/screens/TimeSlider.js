@@ -4,6 +4,7 @@ import {
   View
 } from 'react-native';
 import { Text, Slider } from 'react-native-elements'
+import axios from 'axios'
 
 class TimeSlider extends React.Component {
   constructor() {
@@ -11,30 +12,34 @@ class TimeSlider extends React.Component {
     this.state = {
       hour: 0,
       minute: 0,
-      dataDummy: [
-        {car: 'car1', time: '2017-11-02T00:00:13.049Z'},
-        {car: 'car2', time: '2017-11-02T00:01:13.049Z'},
-        {car: 'car3', time: '2017-11-02T00:02:13.049Z'},
-        {car: 'car4', time: '2017-11-02T00:03:13.049Z'},
-        {car: 'car5', time: '2017-11-02T00:04:13.049Z'},
-        {car: 'car6', time: '2017-11-02T00:10:13.049Z'},
-        {car: 'car7', time: '2017-11-02T00:11:13.049Z'},
-        {car: 'car8', time: '2017-11-02T00:12:13.049Z'},
-        {car: 'car9', time: '2017-11-02T00:59:13.049Z'},
-        {car: 'car10', time: '2017-11-02T00:59:13.049Z'},
-
-        {car: 'car1', time: '2017-11-02T23:00:13.049Z'},
-        {car: 'car2', time: '2017-11-02T23:01:13.049Z'},
-        {car: 'car3', time: '2017-11-02T23:02:13.049Z'},
-        {car: 'car4', time: '2017-11-02T23:03:13.049Z'},
-        {car: 'car5', time: '2017-11-02T23:04:13.049Z'},
-        {car: 'car6', time: '2017-11-02T23:10:13.049Z'},
-        {car: 'car7', time: '2017-11-02T23:11:13.049Z'},
-        {car: 'car8', time: '2017-11-02T23:12:13.049Z'},
-        {car: 'car9', time: '2017-11-02T23:59:13.049Z'},
-        {car: 'car10', time: '2017-11-02T23:59:13.049Z'}
+      dataPosition: [
+        // {car: 'car1', time: '2017-11-02T00:00:13.049Z'},
+        // {car: 'car2', time: '2017-11-02T00:01:13.049Z'},
+        // {car: 'car3', time: '2017-11-02T00:02:13.049Z'},
+        // {car: 'car4', time: '2017-11-02T00:03:13.049Z'},
+        // {car: 'car5', time: '2017-11-02T00:04:13.049Z'},
+        // {car: 'car6', time: '2017-11-02T00:10:13.049Z'},
+        // {car: 'car7', time: '2017-11-02T00:11:13.049Z'},
+        // {car: 'car8', time: '2017-11-02T00:12:13.049Z'},
+        // {car: 'car9', time: '2017-11-02T00:59:13.049Z'},
+        // {car: 'car10', time: '2017-11-02T00:59:13.049Z'},
+        //
+        // {car: 'car1', time: '2017-11-02T23:00:13.049Z'},
+        // {car: 'car2', time: '2017-11-02T23:01:13.049Z'},
+        // {car: 'car3', time: '2017-11-02T23:02:13.049Z'},
+        // {car: 'car4', time: '2017-11-02T23:03:13.049Z'},
+        // {car: 'car5', time: '2017-11-02T23:04:13.049Z'},
+        // {car: 'car6', time: '2017-11-02T23:10:13.049Z'},
+        // {car: 'car7', time: '2017-11-02T23:11:13.049Z'},
+        // {car: 'car8', time: '2017-11-02T23:12:13.049Z'},
+        // {car: 'car9', time: '2017-11-02T23:59:13.049Z'},
+        // {car: 'car10', time: '2017-11-02T23:59:13.049Z'}
       ]
     }
+  }
+
+  componentWillMount() {
+    this.fetchData()
   }
 
   render() {
@@ -46,7 +51,10 @@ class TimeSlider extends React.Component {
           maximumValue={23}
           step={1}
           value={this.state.hour}
-          onValueChange={(hour) => this.setState({hour})} />
+          onValueChange={(hour) => {
+            this.setState({hour})
+            this.fetchData()
+          }} />
         <Text>Hour: {`${this.state.hour}`}</Text>
 
         <Slider
@@ -60,8 +68,21 @@ class TimeSlider extends React.Component {
     );
   }
 
+  fetchData() {
+    axios({
+      method: 'get',
+      url: `http://35.198.228.63/positions/filter?hour=${this.state.hour}&minute=${this.state.minute}`
+    })
+    .then(response => {
+      this.setState({dataPosition: response.data})
+    })
+    .catch(err => {
+      console.log('di dalam catch axios', err)
+    })
+  }
+
   filterTime() {
-    var arr = this.state.dataDummy.filter(data => {
+    var arr = this.state.dataPosition.filter(data => {
       // var hour = data.time[12] + data.time[13]
       var hour = data.time.split('T')[1].split(':')[0]
       return parseInt(hour) == this.state.hour
