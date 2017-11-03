@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 
 const { width, height } = Dimensions.get('window');
+import TimeSlider from './TimeSlider'
 
 const ASPECT_RATIO = width / height;
 const LATITUDE = -6.175110;
@@ -30,7 +31,7 @@ class HeatmapTest extends React.Component {
     };
   }
 
-  componentDidMount() {
+  componentWillMount() {
     navigator.geolocation.getCurrentPosition(
       (position) => {
         alert('set posisi')
@@ -41,7 +42,7 @@ class HeatmapTest extends React.Component {
         });
       },
       (error) => {
-        alert('eror')
+        // alert('eror')
         this.setState({ error: error.message })
       },
       { enableHighAccuracy: true, timeout: 50000, maximumAge: 5000 },
@@ -99,30 +100,16 @@ class HeatmapTest extends React.Component {
       >
         <MapView.Heatmap points={this.state.points} />
       </MapView>
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity
-          onPress={this.changeHeatmap}
-          style={[styles.bubble, styles.button]}
-        >
-          <Text>Update</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={this.toggleWeightEnabled}
-          style={[styles.bubble, styles.button]}
-        >
-          <Text>
-            {this.state.weightEnabled ? 'With weight' : 'Without weight'}
-          </Text>
-        </TouchableOpacity>
+      <View style={{width: 300, height: 190, backgroundColor: '#fff', opacity: 0.7, padding: 15, }}>
+        <TimeSlider/>
       </View>
-      <View>
-        <Text>Latitude: {this.state.latitude}</Text>
-        <Text>Longitude: {this.state.longitude}</Text>
-        {this.state.error ? <Text>Error: {this.state.error}</Text> : null}
-      </View>
+
+
     </View>
     );
 }
+
+
 
 let styles = StyleSheet.create({
   container: {
