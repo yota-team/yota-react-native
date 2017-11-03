@@ -13,13 +13,26 @@ class TimeSlider extends React.Component {
       minute: 0,
       dataDummy: [
         {car: 'car1', time: '2017-11-02T00:00:13.049Z'},
-        {car: 'car1', time: '2017-11-02T00:01:13.049Z'},
-        {car: 'car1', time: '2017-11-02T00:04:13.049Z'},
-        {car: 'car1', time: '2017-11-02T01:00:13.049Z'},
-        {car: 'car1', time: '2017-11-02T01:06:13.049Z'},
-        {car: 'car1', time: '2017-11-02T01:12:13.049Z'},
-        {car: 'car1', time: '2017-11-02T01:58:13.049Z'},
-        {car: 'car1', time: '2017-11-02T01:59:13.049Z'}
+        {car: 'car2', time: '2017-11-02T00:01:13.049Z'},
+        {car: 'car3', time: '2017-11-02T00:02:13.049Z'},
+        {car: 'car4', time: '2017-11-02T00:03:13.049Z'},
+        {car: 'car5', time: '2017-11-02T00:04:13.049Z'},
+        {car: 'car6', time: '2017-11-02T00:10:13.049Z'},
+        {car: 'car7', time: '2017-11-02T00:11:13.049Z'},
+        {car: 'car8', time: '2017-11-02T00:12:13.049Z'},
+        {car: 'car9', time: '2017-11-02T00:59:13.049Z'},
+        {car: 'car10', time: '2017-11-02T00:59:13.049Z'},
+
+        {car: 'car1', time: '2017-11-02T23:00:13.049Z'},
+        {car: 'car2', time: '2017-11-02T23:01:13.049Z'},
+        {car: 'car3', time: '2017-11-02T23:02:13.049Z'},
+        {car: 'car4', time: '2017-11-02T23:03:13.049Z'},
+        {car: 'car5', time: '2017-11-02T23:04:13.049Z'},
+        {car: 'car6', time: '2017-11-02T23:10:13.049Z'},
+        {car: 'car7', time: '2017-11-02T23:11:13.049Z'},
+        {car: 'car8', time: '2017-11-02T23:12:13.049Z'},
+        {car: 'car9', time: '2017-11-02T23:59:13.049Z'},
+        {car: 'car10', time: '2017-11-02T23:59:13.049Z'}
       ]
     }
   }
@@ -38,7 +51,7 @@ class TimeSlider extends React.Component {
 
         <Slider
           maximumValue={59}
-          step={15}
+          step={1}
           value={this.state.minute}
           onValueChange={(minute) => this.setState({minute})} />
         <Text>Minute: {`${this.state.minute}`}</Text>
@@ -49,11 +62,17 @@ class TimeSlider extends React.Component {
 
   filterTime() {
     var arr = this.state.dataDummy.filter(data => {
-      var hour = data.time[12] + data.time[13]
+      // var hour = data.time[12] + data.time[13]
+      var hour = data.time.split('T')[1].split(':')[0]
       return parseInt(hour) == this.state.hour
     })
+    var arr2 = arr.filter(data => {
+      // var minute = data.time[15] + data.time[16]
+      var minute = data.time.split('T')[1].split(':')[1]
+      return parseInt(minute) == this.state.minute
+    })
     return (
-      arr.map((data, idx) => {
+      arr2.map((data, idx) => {
         return <Text key={idx}>Car: {data.car}, Time: {data.time}</Text>
       })
     )
