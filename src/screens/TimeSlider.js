@@ -38,6 +38,10 @@ class TimeSlider extends React.Component {
     }
   }
 
+  componentDidMount() {
+    this.setTime()
+  }
+
   componentWillMount() {
     this.fetchData()
   }
@@ -61,40 +65,54 @@ class TimeSlider extends React.Component {
           maximumValue={59}
           step={1}
           value={this.state.minute}
-          onValueChange={(minute) => this.setState({minute})} />
+          onValueChange={(minute) => {
+            this.setState({minute})
+            this.fetchData()
+          }} />
         <Text>Minute: {`${this.state.minute}`}</Text>
         {this.filterTime()}
       </View>
     );
   }
 
+  setTime() {
+    let date = new Date()
+    let hour = date.toString().split(' ')[4].split(':')[0]
+    let minute = date.toString().split(' ')[4].split(':')[1]
+    this.setState({hour: parseInt(hour)})
+    this.setState({minute: parseInt(minute)})
+    // alert(date)
+  }
+
   fetchData() {
     axios({
       method: 'get',
-      url: `http://35.198.228.63/positions/filter?hour=${this.state.hour}&minute=${this.state.minute}`
+      url: `http://yota.achim.my.id/positions/filter?hour=${this.state.hour}&minute=${this.state.minute}`
     })
     .then(response => {
+      // alert(JSON.stringify(response, null, 2))
       this.setState({dataPosition: response.data})
     })
     .catch(err => {
+      // alert(JSON.stringify(err, null, 2))
       console.log('di dalam catch axios', err)
     })
   }
 
   filterTime() {
     var arr = this.state.dataPosition.filter(data => {
-      // var hour = data.time[12] + data.time[13]
-      var hour = data.time.split('T')[1].split(':')[0]
+      // var hour = data.createdAt[12] + data.createdAt[13]
+      var hour = data.createdAt.split('T')[1].split(':')[0]
       return parseInt(hour) == this.state.hour
     })
     var arr2 = arr.filter(data => {
-      // var minute = data.time[15] + data.time[16]
-      var minute = data.time.split('T')[1].split(':')[1]
+      // var minute = data.createdAt[15] + data.createdAt[16]
+      var minute = data.createdAt.split('T')[1].split(':')[1]
       return parseInt(minute) == this.state.minute
     })
     return (
       arr2.map((data, idx) => {
-        return <Text key={idx}>Car: {data.car}, Time: {data.time}</Text>
+        return <Text key={idx}>Car: {data.car._id}, Lat: {data.lat}, Lng: {data.lng}, Time: {data.createdAt}</Text>
       })
     )
   }
