@@ -24,12 +24,44 @@ class HeatmapTest extends React.Component {
     this.state = {
       points: this.getHeatMapPoints(600),
       weightEnabled: false,
+      latitude: null,
+      longitude: null,
+      error: null,
     };
+  }
+
+  componentDidMount() {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        alert('set posisi')
+        this.setState({
+          latitude: position.coords.latitude,
+          longitude: position.coords.longitude,
+          error: null,
+        });
+      },
+      (error) => {
+        alert('eror')
+        this.setState({ error: error.message })
+      },
+      { enableHighAccuracy: true, timeout: 50000, maximumAge: 5000 },
+    );
+    // this.watchId = navigator.geolocation.watchPosition(
+    //   (position) => {
+    //     this.setState({
+    //       latitude: position.coords.latitude,
+    //       longitude: position.coords.longitude,
+    //       error: null,
+    //     });
+    //   },
+    //   (error) => this.setState({ error: error.message }),
+    //   { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000, distanceFilter: 10 },
+    // );
   }
 
   getHeatMapPoints = (size, withWeight = false) => {
     const points = [];
-    console.log(points);
+    // console.log(points);
 
     for (let i = 0; i < size; i++) {
       const pointData = {
@@ -82,6 +114,11 @@ class HeatmapTest extends React.Component {
             {this.state.weightEnabled ? 'With weight' : 'Without weight'}
           </Text>
         </TouchableOpacity>
+      </View>
+      <View>
+        <Text>Latitude: {this.state.latitude}</Text>
+        <Text>Longitude: {this.state.longitude}</Text>
+        {this.state.error ? <Text>Error: {this.state.error}</Text> : null}
       </View>
     </View>
     );

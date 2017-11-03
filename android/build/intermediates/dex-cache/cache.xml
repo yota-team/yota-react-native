@@ -3,246 +3,246 @@
 
     <item
         is-multidex="false"
-        jar="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
-        <dex dex="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.0.1_8e71b85b8a3dc9248193f91b0cb686a83de203b2.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
-        <dex dex="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.0.0_b74af570ba2c881716a6d9a562c31086f4f2c5b4.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/ztap/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.13.0/a9283170b7305c8d92d25aff02a6ab7e45d06cbe/okio-1.13.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
-        <dex dex="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/pre-dexed/debug/okio-1.13.0_7f53469cef572f4efc6833e87ad9aa0a9fdb960a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/ztap/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.0/5871fb60dc68d67da54a663c3fd636a10a532948/jsr305-3.0.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
-        <dex dex="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/pre-dexed/debug/jsr305-3.0.0_47e4a2544ebc83f7f95015d2198dd62e799f771d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/1.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="2668e49e4e31c7d451b76a36009b902bf44e0d70">
-        <dex dex="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fbcore-1.0.1_a884872e5e8275fdb965dc89b5cfd89f46831770.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/ztap/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
-        <dex dex="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_f2eb49e8b184e60e6ce055adc5f4438d2462e831.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/10.2.4/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="6d0d5e86f5b7203834df01ed78ebfdd5cbf74d48">
-        <dex dex="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-maps-10.2.4_0bf7924959692f01f165162020fd55513acc26b7.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/ztap/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.6.0/69edde9fc4b01c9fd51d25b83428837478c27254/okhttp-3.6.0.jar"
+        jar="/home/achim/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.6.0/69edde9fc4b01c9fd51d25b83428837478c27254/okhttp-3.6.0.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="69edde9fc4b01c9fd51d25b83428837478c27254">
-        <dex dex="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/pre-dexed/debug/okhttp-3.6.0_4f25442a40e9310705ccd95c3f7883cea210b13e.jar" />
+        <dex dex="/home/achim/tja/yota-react-native/android/app/build/intermediates/pre-dexed/debug/okhttp-3.6.0_0df489b64729b2dd459e6068e193de8ff188b1ac.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.2.4/jars/classes.jar"
+        jar="/home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c65a2e39d54023bac3aef64a2f0cff89289c7ff6">
+        <dex dex="/home/achim/tja/yota-react-native/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-drawee-1.3.0_2c5524f03d91f8ef277fb0876c6a6704779db9fd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.2.4/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="dd1d0d84da2cff18f741c63a9c3af7d9aa89fdd6">
-        <dex dex="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-base-10.2.4_feb5ed2c5bd66332e6ffaa52cd056cab6be8ec45.jar" />
+        <dex dex="/home/achim/tja/yota-react-native/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-base-10.2.4_793da7835f11a02ca88115ce0ccc1c7f6a7f162a.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.47.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="576b5113887747a7592650ae14d980e1c57983c4">
-        <dex dex="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/pre-dexed/debug/com.facebook.react-react-native-0.47.1_19f79250aac53043aceba593fab5a8c506978783.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/1.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="d9c4402c3057225d80cbbbec52154e7a25b0ebdf">
-        <dex dex="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-1.0.1_e022a67ef77138282c1e61fd5edddad0aed1be3b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/ztap/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/24.0.0/support-annotations-24.0.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
-        <dex dex="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/pre-dexed/debug/support-annotations-24.0.0_f56e268fc417112b25c2ad539614cfe94c60a506.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fresco/1.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="cf836a435a496eb22ff2aa69aa1e619462549f81">
-        <dex dex="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fresco-1.0.1_40f7aa62668ff57cd31d923d29ffac0eee79ce09.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/10.2.4/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="9ed08fab37c3a572da1d9ed2bf2e36c8d3e2bc48">
-        <dex dex="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-basement-10.2.4_fb59cb29ac42ae74346ba3eeae0c1efba217febb.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/libs/internal_impl-24.0.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
-        <dex dex="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/pre-dexed/debug/internal_impl-24.0.0_1df2c3ab21639bd855c9f936c6571b1d36239deb.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/exploded-aar/com.facebook.fbui.textlayoutbuilder/textlayoutbuilder/1.0.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
-        <dex dex="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/pre-dexed/debug/com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_36703f6bc73e0aa370316e53c116fd8c757ea075.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.47.1/jars/libs/infer-annotations-4.0.jar"
+        jar="/home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.49.5/jars/libs/infer-annotations-4.0.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="9809e90be788acdb479b2b44e2112f3295a03068">
-        <dex dex="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/pre-dexed/debug/infer-annotations-4.0_0c9c14dabbcf1ec26db7401a1ee42125f777eaa9.jar" />
+        <dex dex="/home/achim/tja/yota-react-native/android/app/build/intermediates/pre-dexed/debug/infer-annotations-4.0_c801f67fb7a4357379376d2a12d823392e404848.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/ztap/.gradle/caches/modules-2/files-2.1/com.facebook.fbui.textlayoutbuilder/staticlayout-proxy/1.0/f162442a19fff13995fbd51ba414d9ee05579080/staticlayout-proxy-1.0.jar"
+        jar="/home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
-        <dex dex="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/pre-dexed/debug/staticlayout-proxy-1.0_ace1091acd6ef03083a194e96b8719d9ecb4f4bb.jar" />
+        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
+        <dex dex="/home/achim/tja/yota-react-native/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.0.0_5f92fe8a5eaee288472d0f3f0145638b9dc4b632.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/1.0.1/jars/classes.jar"
+        jar="/home/achim/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.0/5871fb60dc68d67da54a663c3fd636a10a532948/jsr305-3.0.0.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="050f688115ea65a0292d8483a6ffe6bcdab1e2ef">
-        <dex dex="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-base-1.0.1_31c71a73ad1f53ca2fdab732d862277e0c92cd43.jar" />
+        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
+        <dex dex="/home/achim/tja/yota-react-native/android/app/build/intermediates/pre-dexed/debug/jsr305-3.0.0_7fd57810206a4e7d402233108764d81e5f15416d.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/exploded-aar/maptest/react-native-maps/unspecified/jars/classes.jar"
+        jar="/home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/libs/internal_impl-24.0.0.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="42ccfc081e4489d45154b72bf54bc5896acc1053">
-        <dex dex="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/pre-dexed/debug/maptest-react-native-maps-unspecified_16c5b1a547dab2ff572b5df05f327f7c549f6a88.jar" />
+        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
+        <dex dex="/home/achim/tja/yota-react-native/android/app/build/intermediates/pre-dexed/debug/internal_impl-24.0.0_44956768a0f23255033b44b283ca8ed437663d4e.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/ztap/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-urlconnection/3.6.0/3f9b16b774f2c36cfd86dd2053d0b3059531dacc/okhttp-urlconnection-3.6.0.jar"
+        jar="/home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fresco/1.3.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="3f9b16b774f2c36cfd86dd2053d0b3059531dacc">
-        <dex dex="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/pre-dexed/debug/okhttp-urlconnection-3.6.0_53f7db655b573ffca57d1e3e4a190752525c025d.jar" />
+        sha1="fe85b87215e405f5917d40ae4960488ac9224b74">
+        <dex dex="/home/achim/tja/yota-react-native/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fresco-1.3.0_c059e3e92a87b37c0f556c44423ec7f225885a5f.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/ztap/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="6975da39a7040257bd51d21a231b76c915872d38">
-        <dex dex="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/pre-dexed/debug/javax.inject-1_7f081bcf2cd94d8c4b423fd089bbdcb9b119a3c7.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/1.0.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="5a61f17cd72e20aa4323cbf5f909b7c609619275">
-        <dex dex="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-drawee-1.0.1_f1a9e1240822723bffd990ebacbf07b46f58f233.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/10.2.4/jars/classes.jar"
+        jar="/home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/10.2.4/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="5803db663655ef5cb38c6bcb17ba326fdb9edfbd">
-        <dex dex="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-tasks-10.2.4_0b5b46f89c3747cf09954aaebdb8c59c9f971468.jar" />
+        <dex dex="/home/achim/tja/yota-react-native/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-tasks-10.2.4_30bac82f56b0604911998560d0b5416eada8f1d4.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/exploded-aar/com.google.maps.android/android-maps-utils/0.4.4/jars/classes.jar"
+        jar="/home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/1.3.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="6f57b76211a1d7b0c1f18873af59faad95664681">
-        <dex dex="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/pre-dexed/debug/com.google.maps.android-android-maps-utils-0.4.4_319d62a63ce4fabd1a218cff872265fc854a93ff.jar" />
+        sha1="72128af126ddd7d6252da9357fe560d3abcdfb0c">
+        <dex dex="/home/achim/tja/yota-react-native/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-base-1.3.0_eaccbe6293013335fe0b143ea2077c9ffc61f95a.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-okhttp3/1.0.1/jars/classes.jar"
+        jar="/home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-okhttp3/1.3.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="ba9b39366b723ccff6359d1117332968e98a4aca">
-        <dex dex="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-okhttp3-1.0.1_ab896e3cba9a860c9714e65aa2dade13d4241082.jar" />
+        sha1="c03c08c9934b23c8c09c803345ec51a74119127b">
+        <dex dex="/home/achim/tja/yota-react-native/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-okhttp3-1.3.0_4e7f3b364abb066d336d275266bba04820be6520.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/exploded-aar/com.facebook.soloader/soloader/0.1.0/jars/classes.jar"
+        jar="/home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/10.2.4/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="9ed08fab37c3a572da1d9ed2bf2e36c8d3e2bc48">
+        <dex dex="/home/achim/tja/yota-react-native/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-basement-10.2.4_163faa4bb63f5ec891d84f47c030ea5d9db80e48.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.49.5/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="610b957661a666d16b2cd4664c6bf4370226dfd2">
+        <dex dex="/home/achim/tja/yota-react-native/android/app/build/intermediates/pre-dexed/debug/com.facebook.react-react-native-0.49.5_a7195f1f69f584a3254a5fb74474f8669cf1f9a8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/com.facebook.soloader/soloader/0.1.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="8f615bca00639150c9eb6175d4b5471193f70794">
-        <dex dex="/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/pre-dexed/debug/com.facebook.soloader-soloader-0.1.0_392415a41c2d9fc682f07364f7ac415b59f7e5ad.jar" />
+        <dex dex="/home/achim/tja/yota-react-native/android/app/build/intermediates/pre-dexed/debug/com.facebook.soloader-soloader-0.1.0_36ef62d05ce6645c7105ee5b0d24de4ec07ed83f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/achim/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/24.0.0/support-annotations-24.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
+        <dex dex="/home/achim/tja/yota-react-native/android/app/build/intermediates/pre-dexed/debug/support-annotations-24.0.0_b342889a3a3b0a23ec78cffd896cd3e4698b5e33.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="/home/achim/tja/yota-react-native/android/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.0.1_d793a342d10f772b1c11239eeff95dac436496e8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/com.facebook.fbui.textlayoutbuilder/textlayoutbuilder/1.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
+        <dex dex="/home/achim/tja/yota-react-native/android/app/build/intermediates/pre-dexed/debug/com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_4d5f20b1d0510497e7e0f47fdbbcd8b41e50729f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/com.google.maps.android/android-maps-utils/0.4.4/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="6f57b76211a1d7b0c1f18873af59faad95664681">
+        <dex dex="/home/achim/tja/yota-react-native/android/app/build/intermediates/pre-dexed/debug/com.google.maps.android-android-maps-utils-0.4.4_045fe7af917631df81182e0ea0b2e8956a4a684e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/10.2.4/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="6d0d5e86f5b7203834df01ed78ebfdd5cbf74d48">
+        <dex dex="/home/achim/tja/yota-react-native/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-maps-10.2.4_1b26113e9511d21747b18adb8e718090569ae7e3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="48c7f54c2515a2312d3a4481d10c43fbb807f3af">
+        <dex dex="/home/achim/tja/yota-react-native/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-1.3.0_9917c0dbf15e71f76ef5bf014e8a7dd703595ed1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/achim/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.13.0/a9283170b7305c8d92d25aff02a6ab7e45d06cbe/okio-1.13.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
+        <dex dex="/home/achim/tja/yota-react-native/android/app/build/intermediates/pre-dexed/debug/okio-1.13.0_9d7b0fb87cfa542c3cb7a5dfd110b5c27ee5b1a9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/maptest/react-native-maps/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="e5e16d62597b7c96ba25da84249338184e1c4851">
+        <dex dex="/home/achim/tja/yota-react-native/android/app/build/intermediates/pre-dexed/debug/maptest-react-native-maps-unspecified_83a73e59bcf9e866cbf8aa0fbd9b4a0eb307977c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/achim/.gradle/caches/modules-2/files-2.1/com.facebook.fbui.textlayoutbuilder/staticlayout-proxy/1.0/f162442a19fff13995fbd51ba414d9ee05579080/staticlayout-proxy-1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
+        <dex dex="/home/achim/tja/yota-react-native/android/app/build/intermediates/pre-dexed/debug/staticlayout-proxy-1.0_b8d7d14d7fe1baab847f38b6c3d3b7f5b745916f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/achim/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="/home/achim/tja/yota-react-native/android/app/build/intermediates/pre-dexed/debug/javax.inject-1_1b3faf7fd06808bac7798281e62ee06d6e034039.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/achim/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-urlconnection/3.6.0/3f9b16b774f2c36cfd86dd2053d0b3059531dacc/okhttp-urlconnection-3.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="3f9b16b774f2c36cfd86dd2053d0b3059531dacc">
+        <dex dex="/home/achim/tja/yota-react-native/android/app/build/intermediates/pre-dexed/debug/okhttp-urlconnection-3.6.0_6535903b2d4ec0fea03c5ab34d6cca9f05f008b2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/achim/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/home/achim/tja/yota-react-native/android/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_8a49e321dbff6573a11cbecb2f1efd0595bab3a3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="37345de2ed2772f385eaeec37a9c2ff0fea99ad7">
+        <dex dex="/home/achim/tja/yota-react-native/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fbcore-1.3.0_fecb733fe5bb92163e1ee6a0ebab4c93a6513c70.jar" />
     </item>
 
 </items>
