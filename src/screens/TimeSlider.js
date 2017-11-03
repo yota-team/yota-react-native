@@ -10,7 +10,17 @@ class TimeSlider extends React.Component {
     super()
     this.state = {
       hour: 0,
-      minute: 0
+      minute: 0,
+      dataDummy: [
+        {car: 'car1', time: '2017-11-02T00:00:13.049Z'},
+        {car: 'car1', time: '2017-11-02T00:01:13.049Z'},
+        {car: 'car1', time: '2017-11-02T00:04:13.049Z'},
+        {car: 'car1', time: '2017-11-02T01:00:13.049Z'},
+        {car: 'car1', time: '2017-11-02T01:06:13.049Z'},
+        {car: 'car1', time: '2017-11-02T01:12:13.049Z'},
+        {car: 'car1', time: '2017-11-02T01:58:13.049Z'},
+        {car: 'car1', time: '2017-11-02T01:59:13.049Z'}
+      ]
     }
   }
 
@@ -32,8 +42,21 @@ class TimeSlider extends React.Component {
           value={this.state.minute}
           onValueChange={(minute) => this.setState({minute})} />
         <Text>Minute: {`${this.state.minute}`}</Text>
+        {this.filterTime()}
       </View>
     );
+  }
+
+  filterTime() {
+    var arr = this.state.dataDummy.filter(data => {
+      var hour = data.time[12] + data.time[13]
+      return parseInt(hour) == this.state.hour
+    })
+    return (
+      arr.map((data, idx) => {
+        return <Text key={idx}>Car: {data.car}, Time: {data.time}</Text>
+      })
+    )
   }
 
   showTime() {
@@ -64,7 +87,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     // alignItems: 'center',
     // justifyContent: 'center',
-    margin: 30,
+    margin: 50,
   },
 });
 
