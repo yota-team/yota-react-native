@@ -5,37 +5,13 @@ import {
 } from 'react-native';
 import { Text, Slider } from 'react-native-elements'
 import axios from 'axios'
+import { connect } from 'react-redux'
+
+import { actionSetHour, actionSetMinute, fetchDataPositions } from '../../actions/action'
 
 class TimeSlider extends React.Component {
   constructor() {
     super()
-    this.state = {
-      hour: 0,
-      minute: 0,
-      dataPosition: [
-        // {car: 'car1', time: '2017-11-02T00:00:13.049Z'},
-        // {car: 'car2', time: '2017-11-02T00:01:13.049Z'},
-        // {car: 'car3', time: '2017-11-02T00:02:13.049Z'},
-        // {car: 'car4', time: '2017-11-02T00:03:13.049Z'},
-        // {car: 'car5', time: '2017-11-02T00:04:13.049Z'},
-        // {car: 'car6', time: '2017-11-02T00:10:13.049Z'},
-        // {car: 'car7', time: '2017-11-02T00:11:13.049Z'},
-        // {car: 'car8', time: '2017-11-02T00:12:13.049Z'},
-        // {car: 'car9', time: '2017-11-02T00:59:13.049Z'},
-        // {car: 'car10', time: '2017-11-02T00:59:13.049Z'},
-        //
-        // {car: 'car1', time: '2017-11-02T23:00:13.049Z'},
-        // {car: 'car2', time: '2017-11-02T23:01:13.049Z'},
-        // {car: 'car3', time: '2017-11-02T23:02:13.049Z'},
-        // {car: 'car4', time: '2017-11-02T23:03:13.049Z'},
-        // {car: 'car5', time: '2017-11-02T23:04:13.049Z'},
-        // {car: 'car6', time: '2017-11-02T23:10:13.049Z'},
-        // {car: 'car7', time: '2017-11-02T23:11:13.049Z'},
-        // {car: 'car8', time: '2017-11-02T23:12:13.049Z'},
-        // {car: 'car9', time: '2017-11-02T23:59:13.049Z'},
-        // {car: 'car10', time: '2017-11-02T23:59:13.049Z'}
-      ]
-    }
   }
 
   componentDidMount() {
@@ -43,32 +19,32 @@ class TimeSlider extends React.Component {
   }
 
   componentWillMount() {
-    this.fetchData()
+    this.props.getDataPositions({hour: this.props.hour, minute: this.props.minute})
   }
 
   render() {
     return (
-      <View >
+      <View>
         {this.showTime()}
         <Slider
           maximumValue={23}
           step={1}
-          value={this.state.hour}
+          value={parseInt(this.props.hour)}
           onValueChange={(hour) => {
-            this.setState({hour})
-            this.fetchData()
+            this.props.setHour(hour)
+            this.props.getDataPositions({hour: this.props.hour, minute: this.props.minute})
           }} />
-        <Text>Hour: {`${this.state.hour}`}</Text>
+        <Text>Hour: {`${this.props.hour}`}</Text>
 
         <Slider
           maximumValue={59}
           step={1}
-          value={this.state.minute}
+          value={parseInt(this.props.minute)}
           onValueChange={(minute) => {
-            this.setState({minute})
-            this.fetchData()
+            this.props.setMinute(minute)
+            this.props.getDataPositions({hour: this.props.hour, minute: this.props.minute})
           }} />
-        <Text>Minute: {`${this.state.minute}`}</Text>
+        <Text>Minute: {`${this.props.minute}`}</Text>
       </View>
     );
   }
@@ -77,55 +53,29 @@ class TimeSlider extends React.Component {
     let date = new Date()
     let hour = date.toString().split(' ')[4].split(':')[0]
     let minute = date.toString().split(' ')[4].split(':')[1]
-    this.setState({hour: parseInt(hour)})
-    this.setState({minute: parseInt(minute)})
-    // alert(date)
-  }
-
-  fetchData() {
-    axios({
-      method: 'get',
-      url: `http://yota.achim.my.id/positions/filter?hour=${this.state.hour}&minute=${this.state.minute}`
-    })
-    .then(response => {
-      // alert(JSON.stringify(response, null, 2))
-      this.setState({dataPosition: response.data})
-    })
-    .catch(err => {
-      // alert(JSON.stringify(err, null, 2))
-      console.log('di dalam catch axios', err)
-    })
+    this.props.setHour(hour)
+    this.props.setMinute(minute)
   }
 
   filterTime() {
-    var arr = this.state.dataPosition.filter(data => {
-      // var hour = data.createdAt[12] + data.createdAt[13]
-      var hour = data.createdAt.split('T')[1].split(':')[0]
-      return parseInt(hour) == this.state.hour
-    })
-    var arr2 = arr.filter(data => {
-      // var minute = data.createdAt[15] + data.createdAt[16]
-      var minute = data.createdAt.split('T')[1].split(':')[1]
-      return parseInt(minute) == this.state.minute
-    })
     return (
-      arr2.map((data, idx) => {
+      this.props.position_list.map((data, idx) => {
         return <Text key={idx}>Car: {data.car._id}, Lat: {data.lat}, Lng: {data.lng}, Time: {data.createdAt}</Text>
       })
     )
   }
 
   showTime() {
-    if (this.state.hour == 0 && this.state.minute == 0) {
+    if (this.props.hour == 0 && this.props.minute == 0) {
       return <Text h3>00:00</Text>
     }
-    if (this.state.hour == 0) {
-      return <Text h3>00:{this.state.minute}</Text>
+    if (this.props.hour == 0) {
+      return <Text h3>00:{this.props.minute}</Text>
     }
-    if (this.state.minute == 0) {
-      return <Text h3>{this.state.hour}:00</Text>
+    if (this.props.minute == 0) {
+      return <Text h3>{this.props.hour}:00</Text>
     } else {
-      return <Text h3>{this.state.hour}:{this.state.minute}</Text>
+      return <Text h3>{this.props.hour}:{this.props.minute} Time Picker</Text>
     }
   }
 
@@ -134,6 +84,7 @@ class TimeSlider extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -146,4 +97,22 @@ const styles = StyleSheet.create({
   },
 });
 
-export default TimeSlider
+const mapStateToProps = (state) => {
+  return {
+    position_list: state.position_list,
+    hour: state.hour,
+    minute: state.minute
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setHour: (payload) => dispatch(actionSetHour(payload)),
+    setMinute: (payload) => dispatch(actionSetMinute(payload)),
+    getDataPositions: (payload) => dispatch(fetchDataPositions(payload))
+  }
+}
+
+const ConnectedComponent = connect(mapStateToProps, mapDispatchToProps)(TimeSlider)
+
+export default ConnectedComponent
