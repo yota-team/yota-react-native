@@ -1,4 +1,5 @@
 import React from 'react';
+import { Image } from 'react-native'
 import MapView from 'react-native-maps';
 
 import {
@@ -23,7 +24,7 @@ class HeatmapTest extends React.Component {
     super(props);
 
     this.state = {
-      points: this.getHeatMapPoints(600),
+      points: this.getHeatMapPoints(60),
       weightEnabled: false,
       latitude: null,
       longitude: null,
@@ -31,15 +32,17 @@ class HeatmapTest extends React.Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        alert('set posisi')
         this.setState({
           latitude: position.coords.latitude,
           longitude: position.coords.longitude,
+          // points: ,
           error: null,
         });
+
+        // alert(JSON.stringify(this.state.points))
       },
       (error) => {
         alert(JSON.stringify(error))
@@ -47,22 +50,11 @@ class HeatmapTest extends React.Component {
       },
       { enableHighAccuracy: true, timeout: 10000},
     );
-    // this.watchId = navigator.geolocation.watchPosition(
-    //   (position) => {
-    //     this.setState({
-    //       latitude: position.coords.latitude,
-    //       longitude: position.coords.longitude,
-    //       error: null,
-    //     });
-    //   },
-    //   (error) => this.setState({ error: error.message }),
-    //   { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000, distanceFilter: 10 },
-    // );
   }
 
   getHeatMapPoints = (size, withWeight = false) => {
     const points = [];
-    // console.log(points);
+    console.log(points);
 
     for (let i = 0; i < size; i++) {
       const pointData = {
@@ -92,17 +84,20 @@ class HeatmapTest extends React.Component {
       <MapView
         style={styles.map}
         initialRegion={{
-          latitude: LATITUDE,
-          longitude: LONGITUDE,
-          latitudeDelta: LATITUDE_DELTA,
-          longitudeDelta: LONGITUDE_DELTA,
+          latitude: this.state.latitude || -6.25692154,
+          longitude: this.state.longitude || 106.78456578,
+          latitudeDelta: 0.0922,
+          longitudeDelta: 0.0421,
         }}
+        showsUserLocation = {true}
+        followUserLocation={true}
+        showsMyLocationButton={true}
       >
         <MapView.Heatmap points={this.state.points} />
       </MapView>
-      <View style={{width: 300, height: 190, backgroundColor: '#fff', opacity: 0.7, padding: 15, borderRadius: 15,}}>
-        <Text>{this.state.latitude}</Text>
+      <View style={{width: 300, height: 190, backgroundColor: '#fff', opacity: 0.7, padding: 15, borderRadius: 15, margin: 15}}>
         <TimeSlider/>
+        <Text>Lat : {this.state.latitude} Lng : {this.state.longitude} </Text>
       </View>
 
 
