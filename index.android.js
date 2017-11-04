@@ -26,9 +26,12 @@ export default class RnDirectionsApp extends Component {
     }
   }
 
-  componentDidMount() {
+  getLine() {
+      this.getDirections(`${this.state.coordinate.latitude.toString()}, ${this.state.coordinate.longitude.toString()}`, `${this.state.coordinate2.latitude.toString()}, ${this.state.coordinate2.longitude.toString()}`)
+  }
 
-    this.getDirections("-6.2349, 106.9896", "-6.21462, 106.84513")
+  componentDidMount() {
+    this.getLine()
   }
 
   async getDirections(startLoc, destinationLoc) {
@@ -36,6 +39,7 @@ export default class RnDirectionsApp extends Component {
             let resp = await fetch(`https://maps.googleapis.com/maps/api/directions/json?origin=${ startLoc }&destination=${ destinationLoc }`)
             let respJson = await resp.json();
             let points = Polyline.decode(respJson.routes[0].overview_polyline.points);
+            console.log('ini respJson', respJson);
             let coords = points.map((point, index) => {
                 return  {
                     latitude : point[0],
@@ -45,12 +49,12 @@ export default class RnDirectionsApp extends Component {
             this.setState({coords: coords})
             return coords
         } catch(error) {
-            alert(error)
             return error
         }
     }
 
   render() {
+    this.getLine()
     console.log('ini coordinate', this.state.coordinate);
     return (
       <View>
