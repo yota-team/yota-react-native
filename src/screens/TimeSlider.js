@@ -48,8 +48,7 @@ class TimeSlider extends React.Component {
 
   render() {
     return (
-      <View style={styles.time}>
-        <Text h4>TIME SLIDER</Text>
+      <View >
         {this.showTime()}
         <Slider
           maximumValue={23}
@@ -70,7 +69,6 @@ class TimeSlider extends React.Component {
             this.fetchData()
           }} />
         <Text>Minute: {`${this.state.minute}`}</Text>
-        {this.filterTime()}
       </View>
     );
   }
@@ -136,7 +134,6 @@ class TimeSlider extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },

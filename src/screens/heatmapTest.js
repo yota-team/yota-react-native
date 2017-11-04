@@ -14,10 +14,10 @@ const { width, height } = Dimensions.get('window');
 import TimeSlider from './TimeSlider'
 
 const ASPECT_RATIO = width / height;
-const LATITUDE = -6.175110;
-const LONGITUDE = 106.865039;
+const LATITUDE = -6.25692154;
+const LONGITUDE = 106.78456578;
 const LATITUDE_DELTA = 0.0922;
-const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
+const LONGITUDE_DELTA = 0.0421 //LATITUDE_DELTA * ASPECT_RATIO;
 
 class HeatmapTest extends React.Component {
   constructor(props) {
@@ -95,7 +95,7 @@ class HeatmapTest extends React.Component {
       >
         <MapView.Heatmap points={this.state.points} />
       </MapView>
-      <View style={{width: 300, height: 190, backgroundColor: '#fff', opacity: 0.7, padding: 15, borderRadius: 15, margin: 15}}>
+      <View style={{width: 300, height: 190, backgroundColor: '#F5F1ED', opacity: 0.7, padding: 15, borderRadius: 15, margin: 15}}>
         <TimeSlider/>
         <Text>Lat : {this.state.latitude} Lng : {this.state.longitude} </Text>
       </View>
