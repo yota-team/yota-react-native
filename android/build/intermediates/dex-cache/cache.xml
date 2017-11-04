@@ -21,6 +21,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/hacktiv8/Desktop/anto/yota/yota-react-native/android/app/build/intermediates/exploded-aar/passenger/react-native-vector-icons/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f2cf527de8d0bd35d72088fafea02395ba4a9eec">
+        <dex dex="/Users/hacktiv8/Desktop/anto/yota/yota-react-native/android/app/build/intermediates/pre-dexed/debug/passenger-react-native-vector-icons-unspecified_489a277b6cad49262939b5dece94779e35c20100.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/hacktiv8/Desktop/anto/yota/yota-react-native/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
         jumboMode="false"
         optimize="true"
