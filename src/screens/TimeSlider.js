@@ -38,7 +38,7 @@ class TimeSlider extends React.Component {
 
         <Slider
           maximumValue={59}
-          step={1}
+          step={10}
           value={parseInt(this.props.minute)}
           onValueChange={(minute) => {
             this.props.setMinute(minute)

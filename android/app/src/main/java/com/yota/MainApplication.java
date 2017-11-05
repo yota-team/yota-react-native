@@ -1,4 +1,4 @@
-package com.maptest;
+package com.yota;
 
 import android.app.Application;
 

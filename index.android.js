@@ -1,4 +1,4 @@
 import { AppRegistry } from 'react-native';
 import MapTest from './App';
 
-AppRegistry.registerComponent('maptest', () => MapTest);
+AppRegistry.registerComponent('yota', () => MapTest);

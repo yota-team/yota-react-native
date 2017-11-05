@@ -8,16 +8,16 @@
         "source": "/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.47.1/res/anim/fade_out.xml"
     },
     {
-        "merged": "/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/res/merged/debug/anim/catalyst_push_up_out.xml",
-        "source": "/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.47.1/res/anim/catalyst_push_up_out.xml"
+        "merged": "/home/achim/tja/yota-react-native/android/app/build/intermediates/res/merged/debug/anim/abc_shrink_fade_out_from_bottom.xml",
+        "source": "/home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/anim/abc_shrink_fade_out_from_bottom.xml"
     },
     {
         "merged": "/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/res/merged/debug/anim/catalyst_push_up_in.xml",
         "source": "/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.47.1/res/anim/catalyst_push_up_in.xml"
     },
     {
-        "merged": "/home/achim/tja/yota-react-native/android/app/build/intermediates/res/merged/debug/anim/abc_shrink_fade_out_from_bottom.xml",
-        "source": "/home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/anim/abc_shrink_fade_out_from_bottom.xml"
+        "merged": "/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/res/merged/debug/anim/catalyst_push_up_out.xml",
+        "source": "/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.47.1/res/anim/catalyst_push_up_out.xml"
     },
     {
         "merged": "/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/res/merged/debug/anim/abc_fade_out.xml",
@@ -32,12 +32,12 @@
         "source": "/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/anim/abc_slide_out_bottom.xml"
     },
     {
-        "merged": "/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/res/merged/debug/anim/abc_popup_enter.xml",
-        "source": "/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/anim/abc_popup_enter.xml"
-    },
-    {
         "merged": "/home/achim/tja/yota-react-native/android/app/build/intermediates/res/merged/debug/anim/catalyst_push_up_in.xml",
         "source": "/home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.49.5/res/anim/catalyst_push_up_in.xml"
+    },
+    {
+        "merged": "/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/res/merged/debug/anim/abc_popup_enter.xml",
+        "source": "/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/anim/abc_popup_enter.xml"
     },
     {
         "merged": "/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/res/merged/debug/anim/abc_popup_exit.xml",
