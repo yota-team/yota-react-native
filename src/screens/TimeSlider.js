@@ -1,13 +1,16 @@
 import React from 'react';
 import {
   StyleSheet,
-  View
+  View,
+  TouchableHighlight,
+  ActivityIndicator,
+  Button
 } from 'react-native';
 import { Text, Slider } from 'react-native-elements'
 import axios from 'axios'
 import { connect } from 'react-redux'
 
-import { actionSetHour, actionSetMinute, fetchDataPositions } from '../../actions/action'
+import { actionSetHour, actionSetMinute, fetchDataPositions, actionSetLoading } from '../../actions/action'
 
 class TimeSlider extends React.Component {
   constructor() {
@@ -18,33 +21,55 @@ class TimeSlider extends React.Component {
     this.setTime()
   }
 
-  componentWillMount() {
-    this.props.getDataPositions({hour: this.props.hour, minute: this.props.minute})
+  sliderBar() {
+    if(this.props.loading) {
+      return (
+        <View>
+          <ActivityIndicator
+            size="large"
+            color="#ffffff"
+          />
+        </View>
+      )
+    } else {
+      return (
+        <View>
+          <Text style={styles.whiteFont}>Hour: {`${this.props.hour}`} Minute: {`${this.props.minute}`}</Text>
+          <Slider
+            maximumValue={23}
+            step={1}
+            value={parseInt(this.props.hour)}
+            onValueChange={(hour) => {
+              this.props.setHour(hour)
+            }} />
+
+          <Slider
+            maximumValue={59}
+            step={10}
+            value={parseInt(this.props.minute)}
+            onValueChange={(minute) => {
+              this.props.setMinute(minute)
+            }} />
+        </View>
+      )
+    }
   }
 
   render() {
     return (
       <View>
-        {this.showTime()}
-        <Slider
-          maximumValue={23}
-          step={1}
-          value={parseInt(this.props.hour)}
-          onValueChange={(hour) => {
-            this.props.setHour(hour)
-            this.props.getDataPositions({hour: this.props.hour, minute: this.props.minute})
-          }} />
-        <Text>Hour: {`${this.props.hour}`}</Text>
-
-        <Slider
-          maximumValue={59}
-          step={10}
-          value={parseInt(this.props.minute)}
-          onValueChange={(minute) => {
-            this.props.setMinute(minute)
-            this.props.getDataPositions({hour: this.props.hour, minute: this.props.minute})
-          }} />
-        <Text>Minute: {`${this.props.minute}`}</Text>
+        {this.sliderBar()}
+        <Button
+        onPress={() => {this.props.getDataPositions({hour: this.props.hour, minute: this.props.minute}), this.props.setLoading('true')}}
+        title="Show Heatmap"
+        color="#009FB7"
+        />
+        <Text> </Text>
+        <Button
+        onPress={() => {this.props.getDataPositions({hour: this.props.hour, minute: this.props.minute}), this.props.setLoading('true')}}
+        title="Plan Trip Today"
+        color="#E89005"
+        />
       </View>
     );
   }
@@ -65,19 +90,7 @@ class TimeSlider extends React.Component {
     )
   }
 
-  showTime() {
-    if (this.props.hour == 0 && this.props.minute == 0) {
-      return <Text h3>00:00</Text>
-    }
-    if (this.props.hour == 0) {
-      return <Text h3>00:{this.props.minute}</Text>
-    }
-    if (this.props.minute == 0) {
-      return <Text h3>{this.props.hour}:00</Text>
-    } else {
-      return <Text h3>{this.props.hour}:{this.props.minute} Time Picker</Text>
-    }
-  }
+
 
 }
 
@@ -95,13 +108,17 @@ const styles = StyleSheet.create({
     // justifyContent: 'center',
     margin: 50,
   },
+  whiteFont: {
+    color: 'white',
+  }
 });
 
 const mapStateToProps = (state) => {
   return {
     position_list: state.position_list,
     hour: state.hour,
-    minute: state.minute
+    minute: state.minute,
+    loading: state.loadingState
   }
 }
 
@@ -109,7 +126,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     setHour: (payload) => dispatch(actionSetHour(payload)),
     setMinute: (payload) => dispatch(actionSetMinute(payload)),
-    getDataPositions: (payload) => dispatch(fetchDataPositions(payload))
+    getDataPositions: (payload) => dispatch(fetchDataPositions(payload)),
+    setLoading: () => dispatch(actionSetLoading())
   }
 }
 
