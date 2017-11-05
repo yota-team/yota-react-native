@@ -22,7 +22,7 @@ export default class MapTest extends Component {
   render() {
     return (
       <Provider store={store}>
-        <MainMap />
+        <Navigator />
       </Provider>
     );
   }

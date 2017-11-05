@@ -15,6 +15,11 @@ export const actionGetPositions = (payload) => ({
   payload: payload
 })
 
+export const actionGetRoutes = (payload) => {
+  type: 'GET_ROUTES',
+  payload: payload
+}
+
 export const fetchDataPositions = (payload) => {
   return (dispatch) => {
     axios({
@@ -26,6 +31,21 @@ export const fetchDataPositions = (payload) => {
     })
     .catch(err => {
       console.log(err)
+    })
+  }
+}
+
+export const fetchDataRoutes = (payload) => {
+  return (dispatch) => {
+    axios({
+      method: 'get',
+      url: `http://api-ext.trafi.com/routes?start_lat=${payload.start_lat}&start_lng=${payload.start_lng}&end_lat=${end_lat}&end_lng=${end_lng}&is_arrival=${payload.is_arrival}&api_key=${payload.api_key}`
+    })
+    .then(response => {
+      dispatch(actionGetRoutes(response.data))
+    })
+    .catch(err => {
+      console.log(err);
     })
   }
 }

@@ -1,9 +1,11 @@
 import { StackNavigator } from 'react-navigation'
 
-import TimeSlider from '../src/screens/TimeSlider'
+import MainMap from '../src/screens/Map'
+import Trafi from '../src/screens/Trafi'
 
 const Navigator = StackNavigator({
-  TimeSlider: { screen: TimeSlider }
+  MainMap: { screen: MainMap },
+  Trafi: { screen: Trafi }
 })
 
 export default Navigator

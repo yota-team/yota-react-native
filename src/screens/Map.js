@@ -161,6 +161,23 @@ class HeatmapTest extends React.Component {
             strokeColor="blue"/>
         {this.pointHeat()}
       </MapView>
+      <TouchableHighlight onPress={() => this.props.navigation.navigate('Trafi',
+        {
+          dataForReqTrafi:
+          {
+            start_lat: this.state.coordinate.latitude,
+            start_lng: this.state.coordinate.longitude,
+            end_lat: this.state.coordinate2.latitude,
+            end_lng: this.state.coordinate2.longitude,
+            is_arrival: false,
+            api_key: 'f2a8b4411867d6fd8216911c1a96e111' // traffi api key
+          }
+        }
+      )}>
+        <View>
+          <Text h4>Get Routes</Text>
+        </View>
+      </TouchableHighlight>
       <View style={{width: 300, height: 190, backgroundColor: '#F5F1ED', opacity: 0.7, padding: 15, borderRadius: 15, margin: 15}}>
         <TimeSlider/>
         <Text>Lat : {this.state.latitude} Lng : {this.state.longitude} </Text>
