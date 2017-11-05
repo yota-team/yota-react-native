@@ -28,6 +28,7 @@ export const fetchDataPositions = (payload) => {
     })
     .then(response => {
       dispatch(actionGetPositions(response.data))
+      // dispatch(actionSetLoading(false))
     })
     .catch(err => {
       console.log(err)
@@ -49,3 +50,8 @@ export const fetchDataRoutes = (payload) => {
     })
   }
 }
+
+export const actionSetLoading = (payload) => ({
+  type: 'setLoading',
+  payload: payload
+})

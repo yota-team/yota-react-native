@@ -8,11 +8,14 @@ import {
   Text,
   Dimensions,
   TouchableOpacity,
+  ActivityIndicator
 } from 'react-native';
 import { connect } from 'react-redux'
 import Polyline from '@mapbox/polyline';
 
 const { width, height } = Dimensions.get('window');
+import { actionSetLoading } from '../../actions/action'
+
 
 import TimeSlider from './TimeSlider'
 
@@ -34,7 +37,7 @@ class HeatmapTest extends React.Component {
       error: null,
       coords: [],
       coordinate: {
-        latitude:-6.260168,
+        latitude:-6.280168,
         longitude:106.781769
       },
       coordinate2: {
@@ -43,13 +46,16 @@ class HeatmapTest extends React.Component {
       }
     };
   }
+  static navigationOptions = {
+    title: 'Home'
+  };
 
   getLine() {
       this.getDirections(`${this.state.coordinate.latitude.toString()}, ${this.state.coordinate.longitude.toString()}`, `${this.state.coordinate2.latitude.toString()}, ${this.state.coordinate2.longitude.toString()}`)
   }
 
   componentDidMount() {
-    this.getLine()
+    // this.getLine()
     navigator.geolocation.getCurrentPosition(
       (position) => {
         this.setState({
@@ -57,6 +63,10 @@ class HeatmapTest extends React.Component {
           longitude: position.coords.longitude,
           // points: ,
           error: null,
+          coordinate: {
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude
+          }
         });
         // alert(JSON.stringify(this.state.points))
       },
@@ -87,33 +97,6 @@ class HeatmapTest extends React.Component {
         }
     }
 
-  // getHeatMapPoints = (size, withWeight = false) => {
-  //   const points = [];
-  //   console.log(points);
-  //
-  //   for (let i = 0; i < size; i++) {
-  //     const pointData = {
-  //       latitude: LATITUDE + (Math.random() / 10),
-  //       longitude: LONGITUDE + (Math.random() / 10),
-  //     };
-  //     if (withWeight) {
-  //       pointData.weight = Math.round((Math.random() * 10) + 1);
-  //     }
-  //     points.push(pointData);
-  //   }
-  //   return points;
-  // };
-
-  // changeHeatmap = () => {
-  //   this.setState({
-  //     points: this.getHeatMapPoints(50, this.state.weightEnabled),
-  //   });
-  // };
-  //
-  // toggleWeightEnabled = () => {
-  //   this.setState({ weightEnabled: !this.state.weightEnabled });
-  // };
-
   filterTime() {
     return (
       this.props.position_list.map((data, idx) => {
@@ -123,10 +106,31 @@ class HeatmapTest extends React.Component {
   }
 
   pointHeat() {
+    this.props.setLoading('false')
     if(this.props.position_list.length > 0){
       return (
         <MapView.Heatmap points={this.props.position_list} />
       )
+    }
+  }
+
+  mapMarker() {
+    if(this.state.latitude){
+      <View>
+      <MapView.Marker draggable
+        coordinate={this.state.coordinate}
+        onDragEnd={(e) => this.setState({ coordinate: e.nativeEvent.coordinate })} />
+
+      <MapView.Marker draggable
+      coordinate={this.state.coordinate2}
+      onDragEnd={(e) => this.setState({ coordinate2: e.nativeEvent.coordinate })}
+      pinColor={'#474744'} />
+
+      <MapView.Polyline
+          coordinates={this.state.coords}
+          strokeWidth={4}
+            strokeColor="blue"/>
+      </View>
     }
   }
 
@@ -143,23 +147,11 @@ class HeatmapTest extends React.Component {
           longitudeDelta: 0.0421,
         }}
         showsUserLocation = {true}
-        followUserLocation={true}
+        followUserLocation = {true}
         showsMyLocationButton={true}
       >
-      <MapView.Marker draggable
-        coordinate={this.state.coordinate}
-        onDragEnd={(e) => this.setState({ coordinate: e.nativeEvent.coordinate })} />
-
-        <MapView.Marker draggable
-        coordinate={this.state.coordinate2}
-        onDragEnd={(e) => this.setState({ coordinate2: e.nativeEvent.coordinate })}
-        pinColor={'#474744'} />
-
-        <MapView.Polyline
-            coordinates={this.state.coords}
-            strokeWidth={4}
-            strokeColor="blue"/>
-        {this.pointHeat()}
+      {this.mapMarker()}
+      {this.pointHeat()}
       </MapView>
       <TouchableHighlight onPress={() => this.props.navigation.navigate('Trafi',
         {
@@ -178,9 +170,8 @@ class HeatmapTest extends React.Component {
           <Text h4>Get Routes</Text>
         </View>
       </TouchableHighlight>
-      <View style={{width: 300, height: 190, backgroundColor: '#F5F1ED', opacity: 0.7, padding: 15, borderRadius: 15, margin: 15}}>
+      <View style={{width: 300, height: 220, backgroundColor: '#2D2D34', opacity: 0.9, padding: 15, borderRadius: 15, margin: 15}}>
         <TimeSlider/>
-        <Text>Lat : {this.state.latitude} Lng : {this.state.longitude} </Text>
       </View>
 
 
@@ -199,6 +190,11 @@ let styles = StyleSheet.create({
     bottom: 0,
     justifyContent: 'flex-end',
     alignItems: 'center',
+  },
+  centering: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 8,
   },
   map: {
     position: 'absolute',
@@ -231,12 +227,19 @@ const mapStateToProps = (state) => {
   return {
     position_list: state.position_list,
     hour: state.hour,
-    minute: state.minute
+    minute: state.minute,
+    loading: state.loadingState
   }
 }
 
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setLoading: () => dispatch(actionSetLoading())
+  }
+}
 
-const ConnectedComponent = connect(mapStateToProps)(HeatmapTest)
+const ConnectedComponent = connect(mapStateToProps, mapDispatchToProps)(HeatmapTest)
+
 
 export default ConnectedComponent;
