@@ -12,13 +12,18 @@ import {
   View
 } from 'react-native';
 
+import { Provider } from 'react-redux'
+
+import store from './store/store'
+import Navigator from './navigator/navigator'
+import MainMap from './src/screens/Map'
 
 export default class MapTest extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <HeatmapTest />
-      </View>
+      <Provider store={store}>
+        <Navigator />
+      </Provider>
     );
   }
 }

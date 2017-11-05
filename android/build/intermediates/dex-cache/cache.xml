@@ -147,6 +147,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="/home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/Yota/react-native-maps/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="e5e16d62597b7c96ba25da84249338184e1c4851">
+        <dex dex="/home/achim/tja/yota-react-native/android/app/build/intermediates/pre-dexed/debug/Yota-react-native-maps-unspecified_0416d6445d44ac1f2dac2efda0a014f75b5b1161.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/com.facebook.fbui.textlayoutbuilder/textlayoutbuilder/1.0.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
@@ -189,15 +198,6 @@
         revision="23.0.1"
         sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
         <dex dex="/home/achim/tja/yota-react-native/android/app/build/intermediates/pre-dexed/debug/okio-1.13.0_9d7b0fb87cfa542c3cb7a5dfd110b5c27ee5b1a9.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/maptest/react-native-maps/unspecified/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="e5e16d62597b7c96ba25da84249338184e1c4851">
-        <dex dex="/home/achim/tja/yota-react-native/android/app/build/intermediates/pre-dexed/debug/maptest-react-native-maps-unspecified_83a73e59bcf9e866cbf8aa0fbd9b4a0eb307977c.jar" />
     </item>
     <item
         is-multidex="false"

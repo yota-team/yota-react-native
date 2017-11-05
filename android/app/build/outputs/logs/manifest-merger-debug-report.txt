@@ -2,7 +2,7 @@
 manifest
 ADDED from /home/achim/tja/yota-react-native/android/app/src/main/AndroidManifest.xml:1:1-36:12
 	package
-		ADDED from /home/achim/tja/yota-react-native/android/app/src/main/AndroidManifest.xml:2:5-26
+		ADDED from /home/achim/tja/yota-react-native/android/app/src/main/AndroidManifest.xml:2:5-23
 		INJECTED from /home/achim/tja/yota-react-native/android/app/src/main/AndroidManifest.xml
 		INJECTED from /home/achim/tja/yota-react-native/android/app/src/main/AndroidManifest.xml
 	android:versionName
@@ -17,7 +17,7 @@ ADDED from /home/achim/tja/yota-react-native/android/app/src/main/AndroidManifes
 		ADDED from /home/achim/tja/yota-react-native/android/app/src/main/AndroidManifest.xml:1:11-69
 uses-permission#android.permission.INTERNET
 ADDED from /home/achim/tja/yota-react-native/android/app/src/main/AndroidManifest.xml:6:5-67
-MERGED from [maptest:react-native-maps:unspecified] /home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/maptest/react-native-maps/unspecified/AndroidManifest.xml:9:5-67
+MERGED from [Yota:react-native-maps:unspecified] /home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/Yota/react-native-maps/unspecified/AndroidManifest.xml:9:5-67
 MERGED from [com.google.android.gms:play-services-maps:10.2.4] /home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/10.2.4/AndroidManifest.xml:20:5-66
 	android:name
 		ADDED from /home/achim/tja/yota-react-native/android/app/src/main/AndroidManifest.xml:6:22-64
@@ -32,7 +32,7 @@ ADDED from /home/achim/tja/yota-react-native/android/app/src/main/AndroidManifes
 		ADDED from /home/achim/tja/yota-react-native/android/app/src/main/AndroidManifest.xml:8:22-76
 uses-sdk
 ADDED from /home/achim/tja/yota-react-native/android/app/src/main/AndroidManifest.xml:10:5-12:41
-MERGED from [maptest:react-native-maps:unspecified] /home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/maptest/react-native-maps/unspecified/AndroidManifest.xml:5:5-7:41
+MERGED from [Yota:react-native-maps:unspecified] /home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/Yota/react-native-maps/unspecified/AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.maps.android:android-maps-utils:0.4.4] /home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/com.google.maps.android/android-maps-utils/0.4.4/AndroidManifest.xml:5:5-43
 MERGED from [com.google.android.gms:play-services-maps:10.2.4] /home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/10.2.4/AndroidManifest.xml:23:5-43
 MERGED from [com.google.android.gms:play-services-base:10.2.4] /home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.2.4/AndroidManifest.xml:17:5-43
@@ -81,7 +81,7 @@ MERGED from [org.webkit:android-jsc:r174650] /home/achim/tja/yota-react-native/a
 		ADDED from /home/achim/tja/yota-react-native/android/app/src/main/AndroidManifest.xml:19:7-38
 	android:name
 		ADDED from /home/achim/tja/yota-react-native/android/app/src/main/AndroidManifest.xml:15:7-38
-activity#com.maptest.MainActivity
+activity#com.yota.MainActivity
 ADDED from /home/achim/tja/yota-react-native/android/app/src/main/AndroidManifest.xml:20:7-29:18
 	android:label
 		ADDED from /home/achim/tja/yota-react-native/android/app/src/main/AndroidManifest.xml:22:9-41
@@ -112,9 +112,9 @@ ADDED from /home/achim/tja/yota-react-native/android/app/src/main/AndroidManifes
 	android:name
 		ADDED from /home/achim/tja/yota-react-native/android/app/src/main/AndroidManifest.xml:32:11-56
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from [maptest:react-native-maps:unspecified] /home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/maptest/react-native-maps/unspecified/AndroidManifest.xml:10:5-81
+ADDED from [Yota:react-native-maps:unspecified] /home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/Yota/react-native-maps/unspecified/AndroidManifest.xml:10:5-81
 	android:name
-		ADDED from [maptest:react-native-maps:unspecified] /home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/maptest/react-native-maps/unspecified/AndroidManifest.xml:10:22-78
+		ADDED from [Yota:react-native-maps:unspecified] /home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/Yota/react-native-maps/unspecified/AndroidManifest.xml:10:22-78
 meta-data#com.google.android.gms.version
 ADDED from [com.google.maps.android:android-maps-utils:0.4.4] /home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/com.google.maps.android/android-maps-utils/0.4.4/AndroidManifest.xml:8:9-10:69
 MERGED from [com.google.android.gms:play-services-basement:10.2.4] /home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/10.2.4/AndroidManifest.xml:20:9-121
