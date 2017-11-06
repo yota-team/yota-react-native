@@ -10,5 +10,9 @@
     {
         "merged": "/home/achim/tja/yota-react-native/android/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_launcher.png",
         "source": "/home/achim/tja/yota-react-native/android/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/ztap/Desktop/anto/yota-react-native/android/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_launcher.png",
+        "source": "/home/ztap/Desktop/anto/yota-react-native/android/app/src/main/res/mipmap-mdpi/ic_launcher.png"
     }
 ]

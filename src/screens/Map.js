@@ -45,7 +45,8 @@ class HeatmapTest extends React.Component {
       coordinate2: {
         latitude:-6.280168,
         longitude:106.781769
-      }
+      },
+      showSliderStatus: true
     };
   }
   static navigationOptions = {
@@ -140,6 +141,45 @@ class HeatmapTest extends React.Component {
     }
   }
 
+  toggleShowSliderStatus() {
+    this.setState({ showSliderStatus: !this.state.showSliderStatus })
+    // return alert('toggle run')
+  }
+
+  renderEx() {
+    if (this.state.showSliderStatus) {
+      return (
+        <View style={{width: 300, height: 220, backgroundColor: '#2D2D34', opacity: 0.9, padding: 15, borderRadius: 15, margin: 15}}>
+          <TimeSlider/>
+          <Button
+          onPress={() => {
+            return (
+              this.props.navigation.navigate('Trafi',
+              {
+                dataForReqTrafi:
+                {
+                  start_lat: this.state.coordinate.latitude,
+                  start_lng: this.state.coordinate.longitude,
+                  end_lat: this.state.coordinate2.latitude,
+                  end_lng: this.state.coordinate2.longitude,
+                  is_arrival: false,
+                  api_key: 'f2a8b4411867d6fd8216911c1a96e111' // traffi api key
+                }
+              })
+            )
+          }}
+          title="Plan Trip Today"
+          color="#E89005"
+          />
+        </View>
+      )
+    } else {
+      return (
+        null
+      )
+    }
+  }
+
   render () {
     this.getLine()
     return (
@@ -159,32 +199,16 @@ class HeatmapTest extends React.Component {
       {this.mapMarker()}
       {this.pointHeat()}
       </MapView>
-
-      <View style={{width: 300, height: 220, backgroundColor: '#2D2D34', opacity: 0.9, padding: 15, borderRadius: 15, margin: 15}}>
-        <TimeSlider/>
-        <Button
+      <Button
         onPress={() => {
           return (
-            this.props.navigation.navigate('Trafi',
-            {
-              dataForReqTrafi:
-              {
-                start_lat: this.state.coordinate.latitude,
-                start_lng: this.state.coordinate.longitude,
-                end_lat: this.state.coordinate2.latitude,
-                end_lng: this.state.coordinate2.longitude,
-                is_arrival: false,
-                api_key: 'f2a8b4411867d6fd8216911c1a96e111' // traffi api key
-              }
-            })
+            this.toggleShowSliderStatus()
           )
         }}
-        title="Plan Trip Today"
+        title="show/hide slider"
         color="#E89005"
-        />
-      </View>
-
-
+      />
+      { this.renderEx() }
     </View>
   )}
 }
