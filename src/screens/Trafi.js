@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, ScrollView } from 'react-native'
 import { connect } from 'react-redux'
 
 import { fetchDataRoutes } from '../../actions/action'
@@ -11,10 +11,12 @@ class Trafi extends React.Component {
   }
 
   render() {
-    alert(JSON.stringify(this.props.route_list, null, 2))
     return (
       <View>
         <Text>trafi component</Text>
+        <ScrollView>
+          <Text>{JSON.stringify(this.props.route_list, null, 2)}</Text>
+        </ScrollView>
       </View>
     )
   }

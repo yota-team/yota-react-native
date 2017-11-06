@@ -52,6 +52,9 @@ class HeatmapTest extends React.Component {
     title: 'Home'
   };
 
+
+
+
   getLine() {
       this.getDirections(`${this.state.coordinate.latitude.toString()}, ${this.state.coordinate.longitude.toString()}`, `${this.state.coordinate2.latitude.toString()}, ${this.state.coordinate2.longitude.toString()}`)
   }
@@ -60,6 +63,7 @@ class HeatmapTest extends React.Component {
     // this.getLine()
     navigator.geolocation.getCurrentPosition(
       (position) => {
+        alert(JSON.stringify(position.coords))
         this.setState({
           latitude: position.coords.latitude,
           longitude: position.coords.longitude,
