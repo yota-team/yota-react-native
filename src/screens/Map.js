@@ -18,6 +18,7 @@ import Polyline from '@mapbox/polyline';
 const { width, height } = Dimensions.get('window');
 import { actionSetLoading } from '../../actions/action'
 
+import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete'
 
 import TimeSlider from './TimeSlider'
 
@@ -39,19 +40,20 @@ class HeatmapTest extends React.Component {
       error: null,
       coords: [],
       coordinate: {
-        latitude:-6.280168,
-        longitude:106.781769
+        latitude: -6.260908,
+        longitude: 106.781855
       },
       coordinate2: {
-        latitude:-6.280168,
-        longitude:106.781769
-      }
+        latitude: -6.254274,
+        longitude: 106.781619
+      },
+      showSliderStatus: true,
+      changeSlider: true
     };
   }
   static navigationOptions = {
     title: 'Home'
   };
-
 
 
 
@@ -69,10 +71,10 @@ class HeatmapTest extends React.Component {
           longitude: position.coords.longitude,
           // points: ,
           error: null,
-          coordinate: {
-            latitude: position.coords.latitude,
-            longitude: position.coords.longitude
-          }
+          // coordinate: {
+          //   latitude: position.coords.latitude,
+          //   longitude: position.coords.longitude
+          // }
         });
         // alert(JSON.stringify(this.state.points))
       },
@@ -121,29 +123,179 @@ class HeatmapTest extends React.Component {
   }
 
   mapMarker() {
-    if(this.state.latitude){
-      <View>
-      <MapView.Marker draggable
-        coordinate={this.state.coordinate}
-        onDragEnd={(e) => this.setState({ coordinate: e.nativeEvent.coordinate })} />
+    if(this.state.coordinate.latitude !== null && this.state.coordinate2.latitude !== null){
+      return (
+        <View>
+        <MapView.Marker draggable
+          coordinate={this.state.coordinate}
+          onDragEnd={(e) => this.setState({ coordinate: e.nativeEvent.coordinate })} />
 
-      <MapView.Marker draggable
-      coordinate={this.state.coordinate2}
-      onDragEnd={(e) => this.setState({ coordinate2: e.nativeEvent.coordinate })}
-      pinColor={'#474744'} />
+        <MapView.Marker draggable
+        coordinate={this.state.coordinate2}
+        onDragEnd={(e) => this.setState({ coordinate2: e.nativeEvent.coordinate })}
+        pinColor={'#474744'} />
 
-      <MapView.Polyline
-          coordinates={this.state.coords}
-          strokeWidth={4}
-            strokeColor="blue"/>
-      </View>
+        <MapView.Polyline
+            coordinates={this.state.coords}
+            strokeWidth={4}
+              strokeColor="blue"/>
+        </View>
+      )
     }
+  }
+
+  toolBar() {
+    if (this.state.showSliderStatus) {
+      if(this.state.changeSlider) {
+        return (
+          <View style={{width: 300, height: 220, backgroundColor: '#2D2D34', opacity: 0.9, padding: 15, borderRadius: 15, marginTop: -10, margin: 15}}>
+            <TimeSlider/>
+
+            <Button
+              onPress={() => {
+                return (
+                  this.changeSliderStatus()
+                )
+              }}
+              title="Plan Trip Today"
+              color="#E89005"
+            />
+          </View>
+        )
+      } else {
+        return (
+          <View style={{width: 300, height: 220, backgroundColor: '#2D2D34', opacity: 0.9, padding: 15, borderRadius: 15, marginTop: -10, margin: 15}}>
+            <GooglePlacesAutocomplete
+              placeholder='Enter Start Location'
+              minLength={2}
+              autoFocus={false}
+              returnKeyType={'default'}
+              fetchDetails={true}
+              styles={{
+                textInputContainer: {
+                  backgroundColor: 'rgba(0,0,0,0)',
+                  borderTopWidth: 0,
+                  borderBottomWidth:0,
+                  width: 250
+                },
+                textInput: {
+                  marginLeft: 0,
+                  marginRight: 0,
+                  height: 38,
+                  color: '#5d5d5d',
+                  fontSize: 16
+                },
+                predefinedPlacesDescription: {
+                  color: '#1faadb'
+                },
+              }}
+              currentLocation={false}
+              onPress={(data, details = null) => {
+                this.setState({
+                  coordinate: {
+                    latitude:  details.geometry.location.lat,
+                    longitude: details.geometry.location.lng,
+                    latitudeDelta: LATITUDE_DELTA,
+                    longitudeDelta: LONGITUDE_DELTA
+                  }
+                })
+              }}
+
+              query={{
+                   key: 'AIzaSyDX0Js5Ax8t-j0ipagQkQ7Qlqg8KBajvhc',
+                   language: 'en',
+                 }}
+            />
+            <GooglePlacesAutocomplete
+              placeholder='Enter Destination Location'
+              minLength={2}
+              autoFocus={false}
+              returnKeyType={'default'}
+              fetchDetails={true}
+              styles={{
+                textInputContainer: {
+                  backgroundColor: 'rgba(0,0,0,0)',
+                  borderTopWidth: 0,
+                  borderBottomWidth:0,
+                  width: 250
+                },
+                textInput: {
+                  marginLeft: 0,
+                  marginRight: 0,
+                  height: 38,
+                  color: '#5d5d5d',
+                  fontSize: 16
+                },
+                predefinedPlacesDescription: {
+                  color: '#1faadb'
+                },
+              }}
+              currentLocation={false}
+              onPress={(data, details = null) => {
+                this.setState({
+                  coordinate2: {
+                    latitude:  details.geometry.location.lat,
+                    longitude: details.geometry.location.lng,
+                    latitudeDelta: LATITUDE_DELTA,
+                    longitudeDelta: LONGITUDE_DELTA
+                  }
+                })
+              }}
+
+              query={{
+                   key: 'AIzaSyDX0Js5Ax8t-j0ipagQkQ7Qlqg8KBajvhc',
+                   language: 'en',
+                 }}
+            />
+            <Button
+            onPress={() => {
+              return (
+                this.props.navigation.navigate('Trafi',
+                {
+                  dataForReqTrafi:
+                  {
+                    start_lat: this.state.coordinate.latitude,
+                    start_lng: this.state.coordinate.longitude,
+                    end_lat: this.state.coordinate2.latitude,
+                    end_lng: this.state.coordinate2.longitude,
+                    is_arrival: false,
+                    api_key: 'f2a8b4411867d6fd8216911c1a96e111' // traffi api key
+                  }
+                })
+              )
+            }}
+            title="Show Trip Detail"
+            color="#009FB7"
+            />
+            <Button
+              onPress={() => {
+                return (
+                  this.changeSliderStatus()
+                )
+              }}
+              title="Time Slider"
+              color="#E89005"
+            />
+          </View>
+        )
+      }
+    }
+  }
+
+  toggleShowSliderStatus() {
+    this.setState({ showSliderStatus: !this.state.showSliderStatus })
+  }
+
+  changeSliderStatus() {
+    this.setState({ changeSlider: !this.state.changeSlider })
+
   }
 
   render () {
     this.getLine()
     return (
     <View style={styles.container}>
+
       <MapView
         style={styles.map}
         initialRegion={{
@@ -160,29 +312,18 @@ class HeatmapTest extends React.Component {
       {this.pointHeat()}
       </MapView>
 
-      <View style={{width: 300, height: 220, backgroundColor: '#2D2D34', opacity: 0.9, padding: 15, borderRadius: 15, margin: 15}}>
-        <TimeSlider/>
+
         <Button
-        onPress={() => {
-          return (
-            this.props.navigation.navigate('Trafi',
-            {
-              dataForReqTrafi:
-              {
-                start_lat: this.state.coordinate.latitude,
-                start_lng: this.state.coordinate.longitude,
-                end_lat: this.state.coordinate2.latitude,
-                end_lng: this.state.coordinate2.longitude,
-                is_arrival: false,
-                api_key: 'f2a8b4411867d6fd8216911c1a96e111' // traffi api key
-              }
-            })
-          )
-        }}
-        title="Plan Trip Today"
-        color="#E89005"
+          onPress={() => {
+            return (
+              this.toggleShowSliderStatus()
+            )
+          }}
+          title="show/hide slider"
+          color="#E89005"
         />
-      </View>
+        <Text> </Text>
+        {this.toolBar()}
 
 
     </View>
