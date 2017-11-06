@@ -65,11 +65,7 @@ class TimeSlider extends React.Component {
         color="#009FB7"
         />
         <Text> </Text>
-        <Button
-        onPress={() => {this.props.getDataPositions({hour: this.props.hour, minute: this.props.minute}), this.props.setLoading('true')}}
-        title="Plan Trip Today"
-        color="#E89005"
-        />
+        
       </View>
     );
   }

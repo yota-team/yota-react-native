@@ -1,18 +1,40 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, ScrollView } from 'react-native'
+import { connect } from 'react-redux'
+
+import { fetchDataRoutes } from '../../actions/action'
+
 
 class Trafi extends React.Component {
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchDataRoutes(this.props.navigation.state.params.dataForReqTrafi)
   }
 
   render() {
     return (
       <View>
-        <Text>{JSON.stringify(this.props.route_list, null, 2)}</Text>
+        <Text>trafi component</Text>
+        <ScrollView>
+          <Text>{JSON.stringify(this.props.route_list, null, 2)}</Text>
+        </ScrollView>
       </View>
     )
   }
 }
 
-export default Trafi
+const mapStateToProps = (state) => {
+  return {
+    route_list: state.route_list
+  }
+}
+
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchDataRoutes: (payload) => dispatch(fetchDataRoutes(payload))
+  }
+}
+
+const ConnectedComponent = connect(mapStateToProps, mapDispatchToProps)(Trafi)
+
+export default ConnectedComponent

@@ -6,5 +6,9 @@
     {
         "merged": "/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/res/merged/debug/color-v23/abc_color_highlight_material.xml",
         "source": "/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/color-v23/abc_color_highlight_material.xml"
+    },
+    {
+        "merged": "/home/achim/Final/yota-react-native/android/app/build/intermediates/res/merged/debug/color-v23/abc_color_highlight_material.xml",
+        "source": "/home/achim/Final/yota-react-native/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/color-v23/abc_color_highlight_material.xml"
     }
 ]

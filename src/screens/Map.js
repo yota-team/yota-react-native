@@ -8,7 +8,9 @@ import {
   Text,
   Dimensions,
   TouchableOpacity,
-  ActivityIndicator
+  ActivityIndicator,
+  TouchableHighlight,
+  Button
 } from 'react-native';
 import { connect } from 'react-redux'
 import Polyline from '@mapbox/polyline';
@@ -50,6 +52,9 @@ class HeatmapTest extends React.Component {
     title: 'Home'
   };
 
+
+
+
   getLine() {
       this.getDirections(`${this.state.coordinate.latitude.toString()}, ${this.state.coordinate.longitude.toString()}`, `${this.state.coordinate2.latitude.toString()}, ${this.state.coordinate2.longitude.toString()}`)
   }
@@ -58,6 +63,7 @@ class HeatmapTest extends React.Component {
     // this.getLine()
     navigator.geolocation.getCurrentPosition(
       (position) => {
+        alert(JSON.stringify(position.coords))
         this.setState({
           latitude: position.coords.latitude,
           longitude: position.coords.longitude,
@@ -153,25 +159,29 @@ class HeatmapTest extends React.Component {
       {this.mapMarker()}
       {this.pointHeat()}
       </MapView>
-      <TouchableHighlight onPress={() => this.props.navigation.navigate('Trafi',
-        {
-          dataForReqTrafi:
-          {
-            start_lat: this.state.coordinate.latitude,
-            start_lng: this.state.coordinate.longitude,
-            end_lat: this.state.coordinate2.latitude,
-            end_lng: this.state.coordinate2.longitude,
-            is_arrival: false,
-            api_key: 'f2a8b4411867d6fd8216911c1a96e111' // traffi api key
-          }
-        }
-      )}>
-        <View>
-          <Text h4>Get Routes</Text>
-        </View>
-      </TouchableHighlight>
+
       <View style={{width: 300, height: 220, backgroundColor: '#2D2D34', opacity: 0.9, padding: 15, borderRadius: 15, margin: 15}}>
         <TimeSlider/>
+        <Button
+        onPress={() => {
+          return (
+            this.props.navigation.navigate('Trafi',
+            {
+              dataForReqTrafi:
+              {
+                start_lat: this.state.coordinate.latitude,
+                start_lng: this.state.coordinate.longitude,
+                end_lat: this.state.coordinate2.latitude,
+                end_lng: this.state.coordinate2.longitude,
+                is_arrival: false,
+                api_key: 'f2a8b4411867d6fd8216911c1a96e111' // traffi api key
+              }
+            })
+          )
+        }}
+        title="Plan Trip Today"
+        color="#E89005"
+        />
       </View>
 
 
