@@ -18,6 +18,7 @@ import Polyline from '@mapbox/polyline';
 const { width, height } = Dimensions.get('window');
 import { actionSetLoading } from '../../actions/action'
 
+import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete'
 
 import TimeSlider from './TimeSlider'
 
@@ -39,19 +40,18 @@ class HeatmapTest extends React.Component {
       error: null,
       coords: [],
       coordinate: {
-        latitude:-6.280168,
-        longitude:106.781769
+        latitude: -6.260908,
+        longitude: 106.781855
       },
       coordinate2: {
-        latitude:-6.280168,
-        longitude:106.781769
+        latitude: -6.254274,
+        longitude: 106.781619
       }
     };
   }
   static navigationOptions = {
     title: 'Home'
   };
-
 
 
 
@@ -69,10 +69,10 @@ class HeatmapTest extends React.Component {
           longitude: position.coords.longitude,
           // points: ,
           error: null,
-          coordinate: {
-            latitude: position.coords.latitude,
-            longitude: position.coords.longitude
-          }
+          // coordinate: {
+          //   latitude: position.coords.latitude,
+          //   longitude: position.coords.longitude
+          // }
         });
         // alert(JSON.stringify(this.state.points))
       },
@@ -121,22 +121,24 @@ class HeatmapTest extends React.Component {
   }
 
   mapMarker() {
-    if(this.state.latitude){
-      <View>
-      <MapView.Marker draggable
-        coordinate={this.state.coordinate}
-        onDragEnd={(e) => this.setState({ coordinate: e.nativeEvent.coordinate })} />
+    if(this.state.coordinate.latitude !== null && this.state.coordinate2.latitude !== null){
+      return (
+        <View>
+        <MapView.Marker draggable
+          coordinate={this.state.coordinate}
+          onDragEnd={(e) => this.setState({ coordinate: e.nativeEvent.coordinate })} />
 
-      <MapView.Marker draggable
-      coordinate={this.state.coordinate2}
-      onDragEnd={(e) => this.setState({ coordinate2: e.nativeEvent.coordinate })}
-      pinColor={'#474744'} />
+        <MapView.Marker draggable
+        coordinate={this.state.coordinate2}
+        onDragEnd={(e) => this.setState({ coordinate2: e.nativeEvent.coordinate })}
+        pinColor={'#474744'} />
 
-      <MapView.Polyline
-          coordinates={this.state.coords}
-          strokeWidth={4}
-            strokeColor="blue"/>
-      </View>
+        <MapView.Polyline
+            coordinates={this.state.coords}
+            strokeWidth={4}
+              strokeColor="blue"/>
+        </View>
+      )
     }
   }
 
@@ -144,6 +146,7 @@ class HeatmapTest extends React.Component {
     this.getLine()
     return (
     <View style={styles.container}>
+
       <MapView
         style={styles.map}
         initialRegion={{
@@ -160,6 +163,88 @@ class HeatmapTest extends React.Component {
       {this.pointHeat()}
       </MapView>
 
+        <GooglePlacesAutocomplete
+          placeholder='Enter Start Location'
+          minLength={2}
+          autoFocus={false}
+          returnKeyType={'default'}
+          fetchDetails={true}
+          styles={{
+            textInputContainer: {
+              backgroundColor: 'rgba(0,0,0,0)',
+              borderTopWidth: 0,
+              borderBottomWidth:0,
+              width: 250
+            },
+            textInput: {
+              marginLeft: 0,
+              marginRight: 0,
+              height: 38,
+              color: '#5d5d5d',
+              fontSize: 16
+            },
+            predefinedPlacesDescription: {
+              color: '#1faadb'
+            },
+          }}
+          currentLocation={false}
+          onPress={(data, details = null) => {
+            this.setState({
+              coordinate: {
+                latitude:  details.geometry.location.lat,
+                longitude: details.geometry.location.lng,
+                latitudeDelta: LATITUDE_DELTA,
+                longitudeDelta: LONGITUDE_DELTA
+              }
+            })
+          }}
+
+          query={{
+               key: 'AIzaSyDX0Js5Ax8t-j0ipagQkQ7Qlqg8KBajvhc',
+               language: 'en',
+             }}
+        />
+        <GooglePlacesAutocomplete
+          placeholder='Enter Destination Location'
+          minLength={2}
+          autoFocus={false}
+          returnKeyType={'default'}
+          fetchDetails={true}
+          styles={{
+            textInputContainer: {
+              backgroundColor: 'rgba(0,0,0,0)',
+              borderTopWidth: 0,
+              borderBottomWidth:0,
+              width: 250
+            },
+            textInput: {
+              marginLeft: 0,
+              marginRight: 0,
+              height: 38,
+              color: '#5d5d5d',
+              fontSize: 16
+            },
+            predefinedPlacesDescription: {
+              color: '#1faadb'
+            },
+          }}
+          currentLocation={false}
+          onPress={(data, details = null) => {
+            this.setState({
+              coordinate2: {
+                latitude:  details.geometry.location.lat,
+                longitude: details.geometry.location.lng,
+                latitudeDelta: LATITUDE_DELTA,
+                longitudeDelta: LONGITUDE_DELTA
+              }
+            })
+          }}
+
+          query={{
+               key: 'AIzaSyDX0Js5Ax8t-j0ipagQkQ7Qlqg8KBajvhc',
+               language: 'en',
+             }}
+        />
       <View style={{width: 300, height: 220, backgroundColor: '#2D2D34', opacity: 0.9, padding: 15, borderRadius: 15, margin: 15}}>
         <TimeSlider/>
         <Button
