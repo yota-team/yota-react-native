@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, ScrollView } from 'react-native'
+import { View, Text, ScrollView, FlatList } from 'react-native'
 import { connect } from 'react-redux'
 
 import { fetchDataRoutes } from '../../actions/action'
@@ -11,12 +11,15 @@ class Trafi extends React.Component {
   }
 
   render() {
+    const keyGenerator = () => (
+      Math.random().toString(36).substr(2, 10)
+    );
     return (
       <View>
-        <Text>trafi component</Text>
         <ScrollView>
-          <Text>{JSON.stringify(this.props.route_list, null, 2)}</Text>
+          <Text>{JSON.stringify(this.props.route_list.Routes, null, 2)}</Text>
         </ScrollView>
+
       </View>
     )
   }
