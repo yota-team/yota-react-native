@@ -146,30 +146,57 @@ class HeatmapTest extends React.Component {
       )
     }
   }
+  showTripDetail(){
+    if(this.state.coordinate.latitude !== 0 && this.state.coordinate2.latitude !== 0){
+      return(
+        <Button
+        onPress={() => {
+          return (
+            this.props.navigation.navigate('Trafi',
+            {
+              dataForReqTrafi:
+              {
+                start_lat: this.state.coordinate.latitude,
+                start_lng: this.state.coordinate.longitude,
+                end_lat: this.state.coordinate2.latitude,
+                end_lng: this.state.coordinate2.longitude,
+                is_arrival: false,
+                api_key: 'f2a8b4411867d6fd8216911c1a96e111' // traffi api key
+              }
+            })
+          )
+        }}
+        title="Show Trip Detail"
+        color="#E89005"
+        />
+      )
+    }
+  }
 
   toolBar() {
     if (this.state.showSliderStatus) {
-      if(this.state.changeSlider) {
+      if(!this.state.changeSlider) {
         return (
-          <View style={{width: 300, height: 220, backgroundColor: '#2D2D34', opacity: 0.9, padding: 15, borderRadius: 15, marginTop: -10, margin: 15}}>
+          <View style={{width: 300, height: 230, backgroundColor: '#2D2D34', opacity: 0.9, padding: 15, borderRadius: 15, marginTop: -10, margin: 15}}>
             <TimeSlider/>
-
+            {this.showTripDetail()}
+            <Text> </Text>
             <Button
               onPress={() => {
                 return (
                   this.changeSliderStatus()
                 )
               }}
-              title="Plan Trip Today"
-              color="#E89005"
+              title="back"
+              color="#252627"
             />
           </View>
         )
       } else {
         return (
-          <View style={{width: 300, height: 220, backgroundColor: '#2D2D34', position: 'relative', opacity: 0.9, padding: 15, borderRadius: 15, marginTop: -10, margin: 15}}>
+          <View style={{width: 300, height: 230, backgroundColor: '#2D2D34', position: 'relative', opacity: 0.9, padding: 15, borderRadius: 15, marginTop: -10, margin: 15}}>
 
-
+              <Text style={{color: 'white'}}>Plan Trip Today</Text>
               <GooglePlacesAutocomplete
                 placeholder={this.state.address1 === null ? 'Enter Start Location' : `${this.state.address1}`}
                 minLength={2}
@@ -259,27 +286,7 @@ class HeatmapTest extends React.Component {
               />
               <View style={{zIndex: 0}}>
 
-                <Text> </Text>
-                <Button
-                onPress={() => {
-                  return (
-                    this.props.navigation.navigate('Trafi',
-                    {
-                      dataForReqTrafi:
-                      {
-                        start_lat: this.state.coordinate.latitude,
-                        start_lng: this.state.coordinate.longitude,
-                        end_lat: this.state.coordinate2.latitude,
-                        end_lng: this.state.coordinate2.longitude,
-                        is_arrival: false,
-                        api_key: 'f2a8b4411867d6fd8216911c1a96e111' // traffi api key
-                      }
-                    })
-                  )
-                }}
-                title="Show Trip Detail"
-                color="#009FB7"
-                />
+
                 <Text> </Text>
                   <Button
                     onPress={() => {
@@ -287,7 +294,7 @@ class HeatmapTest extends React.Component {
                         this.changeSliderStatus()
                       )
                     }}
-                    title="Time Slider"
+                    title="Show Heatmap"
                     color="#E89005"
                   />
               </View>
@@ -313,13 +320,16 @@ class HeatmapTest extends React.Component {
     		if (json.status !== 'OK') {
     			throw new Error(`Geocode error: ${json.status}`);
     		} else {
+          var newAddress = `${json.results[0].address_components[1].long_name} no. ${json.results[0].address_components[0].long_name} ${json.results[0].address_components[2].long_name}`
+
           if(code === 1){
             this.setState({
-              address1: json.results[0].address_components[0].long_name
+              address1: newAddress
             })
           } else {
+            alert(newAddress)
             this.setState({
-              address2: json.results[0].address_components[0].long_name
+              address2: newAddress
             })
           }
         }
