@@ -3,7 +3,8 @@ const defaultState = {
   hour: 0,
   minute: 0,
   route_list: [],
-  loadingState: false
+  loadingState: false,
+  loadingTrafi: true
 }
 
 const Reducer = (state=defaultState, action) => {
@@ -18,7 +19,7 @@ const Reducer = (state=defaultState, action) => {
       return {...state, minute: action.payload}
 
     case 'GET_ROUTES':
-      return {...state, route_list: action.payload}
+      return {...state, route_list: action.payload, loadingTrafi: false}
 
     case 'setLoading':
       var newState = action.payload
@@ -27,7 +28,7 @@ const Reducer = (state=defaultState, action) => {
       } else {
         return {...state, loadingState: false}
       }
-      
+
     default:
         return state
   }

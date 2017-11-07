@@ -284,6 +284,9 @@ class HeatmapTest extends React.Component {
                      language: 'en',
                    }}
               />
+              <Text> </Text>
+              <Text> </Text>
+
               <View style={{zIndex: 0}}>
 
 
@@ -327,7 +330,7 @@ class HeatmapTest extends React.Component {
               address1: newAddress
             })
           } else {
-            alert(newAddress)
+            // alert(newAddress)
             this.setState({
               address2: newAddress
             })
