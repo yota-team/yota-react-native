@@ -12,12 +12,12 @@
         "source": "/home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.2.4/res/color/common_google_signin_btn_text_light.xml"
     },
     {
-        "merged": "/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_dark.xml",
-        "source": "/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.2.4/res/color/common_google_signin_btn_text_dark.xml"
-    },
-    {
         "merged": "/home/achim/Final/yota-react-native/android/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_tint.xml",
         "source": "/home/achim/Final/yota-react-native/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.2.4/res/color/common_google_signin_btn_tint.xml"
+    },
+    {
+        "merged": "/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_dark.xml",
+        "source": "/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.2.4/res/color/common_google_signin_btn_text_dark.xml"
     },
     {
         "merged": "/home/achim/Final/yota-react-native/android/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_dark.xml",

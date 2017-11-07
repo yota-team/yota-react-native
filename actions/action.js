@@ -28,7 +28,7 @@ export const fetchDataPositions = (payload) => {
     })
     .then(response => {
       dispatch(actionGetPositions(response.data))
-      // dispatch(actionSetLoading(false))
+      dispatch(actionSetLoading(false))
     })
     .catch(err => {
       console.log(err)
@@ -40,7 +40,7 @@ export const fetchDataRoutes = (payload) => {
   return (dispatch) => {
     axios({
       method: 'get',
-      url: `http://api-ext.trafi.com/routes?start_lat=${payload.start_lat}&start_lng=${payload.start_lng}&end_lat=${payload.end_lat}&end_lng=${payload.end_lng}&is_arrival=${payload.is_arrival}&api_key=${payload.api_key}`
+      url: `http://api-ext.trafi.com/routes?start_lat=${payload.start_lat}&start_lng=${payload.start_lng}&end_lat=${payload.end_lat}&end_lng=${payload.end_lng}&time=${payload.time}&is_arrival=${payload.is_arrival}&api_key=${payload.api_key}`
     })
     .then(response => {
       dispatch(actionGetRoutes(response.data))

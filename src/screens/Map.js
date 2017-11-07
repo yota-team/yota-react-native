@@ -40,15 +40,17 @@ class HeatmapTest extends React.Component {
       error: null,
       coords: [],
       coordinate: {
-        latitude: -6.260908,
-        longitude: 106.781855
+        latitude: 0,
+        longitude: 0
       },
       coordinate2: {
-        latitude: -6.254274,
-        longitude: 106.781619
+        latitude: 0,
+        longitude: 0
       },
       showSliderStatus: true,
-      changeSlider: true
+      changeSlider: true,
+      address1: null,
+      address2: null
     };
   }
   static navigationOptions = {
@@ -65,7 +67,7 @@ class HeatmapTest extends React.Component {
     // this.getLine()
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        alert(JSON.stringify(position.coords))
+        // alert(JSON.stringify(position.coords))
         this.setState({
           latitude: position.coords.latitude,
           longitude: position.coords.longitude,
@@ -79,7 +81,7 @@ class HeatmapTest extends React.Component {
         // alert(JSON.stringify(this.state.points))
       },
       (error) => {
-        alert(JSON.stringify(error))
+        // alert(JSON.stringify(error))
         this.setState({ error: error.message })
       },
       { enableHighAccuracy: true, timeout: 10000},
@@ -123,7 +125,8 @@ class HeatmapTest extends React.Component {
   }
 
   mapMarker() {
-    if(this.state.coordinate.latitude !== null && this.state.coordinate2.latitude !== null){
+    this.getLine()
+    if(this.state.coordinate.latitude !== 0 && this.state.coordinate2.latitude !== 0){
       return (
         <View>
         <MapView.Marker draggable
@@ -143,139 +146,162 @@ class HeatmapTest extends React.Component {
       )
     }
   }
+  showTripDetail(){
+    if(this.state.coordinate.latitude !== 0 && this.state.coordinate2.latitude !== 0){
+      return(
+        <Button
+        onPress={() => {
+          return (
+            this.props.navigation.navigate('Trafi',
+            {
+              dataForReqTrafi:
+              {
+                start_lat: this.state.coordinate.latitude,
+                start_lng: this.state.coordinate.longitude,
+                end_lat: this.state.coordinate2.latitude,
+                time: this.props.hour < 10 ? `0${this.props.hour}:00` : `${this.props.hour}:00`,
+                end_lng: this.state.coordinate2.longitude,
+                is_arrival: false,
+                api_key: 'f2a8b4411867d6fd8216911c1a96e111' // traffi api key
+              }
+            })
+          )
+        }}
+        title="Show Trip Detail"
+        color="#E89005"
+        />
+      )
+    }
+  }
 
   toolBar() {
     if (this.state.showSliderStatus) {
-      if(this.state.changeSlider) {
+      if(!this.state.changeSlider) {
         return (
-          <View style={{width: 300, height: 220, backgroundColor: '#2D2D34', opacity: 0.9, padding: 15, borderRadius: 15, marginTop: -10, margin: 15}}>
+          <View style={{width: 300, height: 230, backgroundColor: '#2D2D34', opacity: 0.9, padding: 15, borderRadius: 15, marginTop: -10, margin: 15}}>
             <TimeSlider/>
-
+            {this.showTripDetail()}
+            <Text> </Text>
             <Button
               onPress={() => {
                 return (
                   this.changeSliderStatus()
                 )
               }}
-              title="Plan Trip Today"
-              color="#E89005"
+              title="back"
+              color="#252627"
             />
           </View>
         )
       } else {
         return (
-          <View style={{width: 300, height: 220, backgroundColor: '#2D2D34', opacity: 0.9, padding: 15, borderRadius: 15, marginTop: -10, margin: 15}}>
-            <GooglePlacesAutocomplete
-              placeholder='Enter Start Location'
-              minLength={2}
-              autoFocus={false}
-              returnKeyType={'default'}
-              fetchDetails={true}
-              styles={{
-                textInputContainer: {
-                  backgroundColor: 'rgba(0,0,0,0)',
-                  borderTopWidth: 0,
-                  borderBottomWidth:0,
-                  width: 250
-                },
-                textInput: {
-                  marginLeft: 0,
-                  marginRight: 0,
-                  height: 38,
-                  color: '#5d5d5d',
-                  fontSize: 16
-                },
-                predefinedPlacesDescription: {
-                  color: '#1faadb'
-                },
-              }}
-              currentLocation={false}
-              onPress={(data, details = null) => {
-                this.setState({
-                  coordinate: {
-                    latitude:  details.geometry.location.lat,
-                    longitude: details.geometry.location.lng,
-                    latitudeDelta: LATITUDE_DELTA,
-                    longitudeDelta: LONGITUDE_DELTA
-                  }
-                })
-              }}
+          <View style={{width: 300, height: 230, backgroundColor: '#2D2D34', position: 'relative', opacity: 0.9, padding: 15, borderRadius: 15, marginTop: -10, margin: 15}}>
 
-              query={{
-                   key: 'AIzaSyDX0Js5Ax8t-j0ipagQkQ7Qlqg8KBajvhc',
-                   language: 'en',
-                 }}
-            />
-            <GooglePlacesAutocomplete
-              placeholder='Enter Destination Location'
-              minLength={2}
-              autoFocus={false}
-              returnKeyType={'default'}
-              fetchDetails={true}
-              styles={{
-                textInputContainer: {
-                  backgroundColor: 'rgba(0,0,0,0)',
-                  borderTopWidth: 0,
-                  borderBottomWidth:0,
-                  width: 250
-                },
-                textInput: {
-                  marginLeft: 0,
-                  marginRight: 0,
-                  height: 38,
-                  color: '#5d5d5d',
-                  fontSize: 16
-                },
-                predefinedPlacesDescription: {
-                  color: '#1faadb'
-                },
-              }}
-              currentLocation={false}
-              onPress={(data, details = null) => {
-                this.setState({
-                  coordinate2: {
-                    latitude:  details.geometry.location.lat,
-                    longitude: details.geometry.location.lng,
-                    latitudeDelta: LATITUDE_DELTA,
-                    longitudeDelta: LONGITUDE_DELTA
-                  }
-                })
-              }}
+              <Text style={{color: 'white'}}>Plan Trip Today</Text>
+              <GooglePlacesAutocomplete
+                placeholder={this.state.address1 === null ? 'Enter Start Location' : `${this.state.address1}`}
+                minLength={2}
+                autoFocus={false}
+                returnKeyType={'default'}
+                fetchDetails={true}
+                styles={{
+                  textInputContainer: {
+                    backgroundColor: 'rgba(0,0,0,0)',
+                    borderTopWidth: 0,
+                    borderBottomWidth:0,
+                    width: 270,
+                    zIndex: 99
+                  },
+                  textInput: {
+                    marginLeft: 0,
+                    marginRight: 0,
+                    height: 38,
+                    color: '#009FB7',
+                    fontSize: 16
+                  },
+                  predefinedPlacesDescription: {
+                    color: '#1faadb'
+                  },
+                }}
+                currentLocation={false}
+                onPress={(data, details = null) => {
+                  this.setState({
+                    coordinate: {
+                      latitude:  details.geometry.location.lat,
+                      longitude: details.geometry.location.lng,
+                      latitudeDelta: LATITUDE_DELTA,
+                      longitudeDelta: LONGITUDE_DELTA
+                    }
+                  }), this.getAddress(`${details.geometry.location.lat},${details.geometry.location.lng}`, 1)
+                }}
 
-              query={{
-                   key: 'AIzaSyDX0Js5Ax8t-j0ipagQkQ7Qlqg8KBajvhc',
-                   language: 'en',
-                 }}
-            />
-            <Button
-            onPress={() => {
-              return (
-                this.props.navigation.navigate('Trafi',
-                {
-                  dataForReqTrafi:
-                  {
-                    start_lat: this.state.coordinate.latitude,
-                    start_lng: this.state.coordinate.longitude,
-                    end_lat: this.state.coordinate2.latitude,
-                    end_lng: this.state.coordinate2.longitude,
-                    is_arrival: false,
-                    api_key: 'f2a8b4411867d6fd8216911c1a96e111' // traffi api key
-                  }
-                })
-              )
-            }}
-            title="Show Trip Detail"
-            color="#009FB7"
-            />
-            <Button
-              onPress={() => {
-                return (
-                  this.changeSliderStatus()
-                )
-              }}
-              title="Time Slider"
-              color="#E89005"
-            />
+                query={{
+                     key: 'AIzaSyDX0Js5Ax8t-j0ipagQkQ7Qlqg8KBajvhc',
+                     language: 'en',
+                   }}
+              />
+
+              <GooglePlacesAutocomplete
+                placeholder={this.state.address2 === null ? 'Enter Destination' : `${this.state.address2}`}
+                minLength={2}
+                autoFocus={false}
+                returnKeyType={'default'}
+                fetchDetails={true}
+                styles={{
+                  textInputContainer: {
+                    backgroundColor: 'rgba(0,0,0,0)',
+                    borderTopWidth: 0,
+                    borderBottomWidth:0,
+                    width: 270,
+                    marginTop: 10
+                  },
+                  textInput: {
+                    marginTop: 0,
+                    marginLeft: 0,
+                    marginRight: 0,
+                    height: 38,
+                    color: '#009FB7',
+                    fontSize: 16,
+                    zIndex: 299
+                  },
+                  predefinedPlacesDescription: {
+                    color: '#1faadb'
+                  },
+                }}
+                currentLocation={false}
+                onPress={(data, details = null) => {
+                  this.setState({
+                    coordinate2: {
+                      latitude:  details.geometry.location.lat,
+                      longitude: details.geometry.location.lng,
+                      latitudeDelta: LATITUDE_DELTA,
+                      longitudeDelta: LONGITUDE_DELTA
+                    }
+                  }), this.getAddress(`${details.geometry.location.lat},${details.geometry.location.lng}`, 2)
+                }}
+
+                query={{
+                     key: 'AIzaSyDX0Js5Ax8t-j0ipagQkQ7Qlqg8KBajvhc',
+                     language: 'en',
+                   }}
+              />
+              <Text> </Text>
+              <Text> </Text>
+
+              <View style={{zIndex: 0}}>
+
+
+                <Text> </Text>
+                  <Button
+                    onPress={() => {
+                      return (
+                        this.changeSliderStatus()
+                      )
+                    }}
+                    title="Show Heatmap"
+                    color="#E89005"
+                  />
+              </View>
           </View>
         )
       }
@@ -291,8 +317,33 @@ class HeatmapTest extends React.Component {
 
   }
 
+  getAddress(latlng, code) {
+    fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${latlng}&key=AIzaSyBKoPKt3iYfzEKBl4zKJWGtARWdf7uFdFM`)
+    	.then(res => res.json())
+    	.then((json) => {
+    		if (json.status !== 'OK') {
+    			throw new Error(`Geocode error: ${json.status}`);
+    		} else {
+          var newAddress = `${json.results[0].address_components[1].long_name} no. ${json.results[0].address_components[0].long_name} ${json.results[0].address_components[2].long_name}`
+
+          if(code === 1){
+            this.setState({
+              address1: newAddress
+            })
+          } else {
+            // alert(newAddress)
+            this.setState({
+              address2: newAddress
+            })
+          }
+        }
+
+    	// alert(JSON.stringify(json.results[0].address_components[0].long_name))
+    });
+  }
+
   render () {
-    this.getLine()
+    // this.getLine()
     return (
     <View style={styles.container}>
 
@@ -312,15 +363,14 @@ class HeatmapTest extends React.Component {
       {this.pointHeat()}
       </MapView>
 
-
         <Button
           onPress={() => {
             return (
               this.toggleShowSliderStatus()
             )
           }}
-          title="show/hide slider"
-          color="#E89005"
+          title="menu"
+          color="#757780"
         />
         <Text> </Text>
         {this.toolBar()}
