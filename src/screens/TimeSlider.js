@@ -34,7 +34,7 @@ class TimeSlider extends React.Component {
     } else {
       return (
         <View>
-          <Text style={styles.whiteFont}>Time: {`${this.props.hour}`} </Text>
+          <Text style={styles.whiteFont}>Time: {this.props.hour < 10 ? `0${this.props.hour}` : `${this.props.hour}`}:00 - {this.props.hour < 10 ? `0${this.props.hour}` : `${this.props.hour}`}:59 </Text>
           <Slider
             minimumTrackTintColor='#eddea4'
             maximumTrackTintColor='#ffffff'
@@ -55,7 +55,7 @@ class TimeSlider extends React.Component {
       <View>
         {this.sliderBar()}
         <Button
-        onPress={() => {this.props.getDataPositions({hour: this.props.hour, minute: this.props.minute}), this.props.setLoading('true')}}
+        onPress={() => {this.props.getDataPositions({hour: this.props.hour, minute: this.props.minute}), this.props.setLoading(true)}}
         title="Show Heatmap"
         color="#009FB7"
         />
@@ -118,7 +118,7 @@ const mapDispatchToProps = (dispatch) => {
     setHour: (payload) => dispatch(actionSetHour(payload)),
     setMinute: (payload) => dispatch(actionSetMinute(payload)),
     getDataPositions: (payload) => dispatch(fetchDataPositions(payload)),
-    setLoading: () => dispatch(actionSetLoading())
+    setLoading: (payload) => dispatch(actionSetLoading(payload))
   }
 }
 

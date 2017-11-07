@@ -159,6 +159,7 @@ class HeatmapTest extends React.Component {
                 start_lat: this.state.coordinate.latitude,
                 start_lng: this.state.coordinate.longitude,
                 end_lat: this.state.coordinate2.latitude,
+                time: this.props.hour < 10 ? `0${this.props.hour}:00` : `${this.props.hour}:00`,
                 end_lng: this.state.coordinate2.longitude,
                 is_arrival: false,
                 api_key: 'f2a8b4411867d6fd8216911c1a96e111' // traffi api key

@@ -23,11 +23,11 @@ const Reducer = (state=defaultState, action) => {
 
     case 'setLoading':
       var newState = action.payload
-      if(newState === 'false'){
-        return {...state, loadingState: true}
-      } else {
-        return {...state, loadingState: false}
-      }
+      // if(newState === false){
+        return {...state, loadingState: action.payload}
+      // } else {
+      //   return {...state, loadingState: false}
+      // }
 
     default:
         return state
