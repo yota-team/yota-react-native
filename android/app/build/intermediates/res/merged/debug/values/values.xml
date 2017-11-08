@@ -270,7 +270,6 @@
     <item name="action_bar_spinner" type="id"/>
     <item name="action_menu_divider" type="id"/>
     <item name="action_menu_presenter" type="id"/>
-    <item name="amu_text" type="id"/>
     <item name="home" type="id"/>
     <item name="progress_circular" type="id"/>
     <item name="progress_horizontal" type="id"/>
@@ -1642,16 +1641,4 @@
     <style name="Widget.AppCompat.TextView.SpinnerItem" parent="Base.Widget.AppCompat.TextView.SpinnerItem"/>
     <style name="Widget.AppCompat.Toolbar" parent="Base.Widget.AppCompat.Toolbar"/>
     <style name="Widget.AppCompat.Toolbar.Button.Navigation" parent="Base.Widget.AppCompat.Toolbar.Button.Navigation"/>
-    <style name="amu_Bubble.TextAppearance.Dark" parent="android:TextAppearance.Medium">
-        <item name="android:textSize">14sp</item>
-        <item name="android:textColor">#ff7f7f7f</item>
-    </style>
-    <style name="amu_Bubble.TextAppearance.Light" parent="amu_Bubble.TextAppearance.Dark">
-        <item name="android:textColor">#ffeeeeee</item>
-    </style>
-    <style name="amu_ClusterIcon.TextAppearance" parent="android:TextAppearance">
-        <item name="android:textColor">#ffeeeeee</item>
-        <item name="android:textSize">16sp</item>
-        <item name="android:textStyle">bold</item>
-    </style>
 </resources>

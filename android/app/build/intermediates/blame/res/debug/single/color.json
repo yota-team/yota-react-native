@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Users/hacktiv8/Desktop/anto/yota/yota-react-native/android/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_dark.xml",
+        "source": "/Users/hacktiv8/Desktop/anto/yota/yota-react-native/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/color/abc_secondary_text_material_dark.xml"
+    },
+    {
         "merged": "/home/achim/tja/yota-react-native/android/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_dark.xml",
         "source": "/home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/color/abc_primary_text_disable_only_material_dark.xml"
     },
@@ -8,24 +12,24 @@
         "source": "/home/achim/YOTA/yota-react-native/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.2.4/res/color/common_google_signin_btn_text_dark.xml"
     },
     {
-        "merged": "/home/achim/Final/yota-react-native/android/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_tint.xml",
-        "source": "/home/achim/Final/yota-react-native/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.2.4/res/color/common_google_signin_btn_tint.xml"
-    },
-    {
         "merged": "/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_dark.xml",
         "source": "/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.2.4/res/color/common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "/home/achim/Final/yota-react-native/android/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_tint.xml",
+        "source": "/home/achim/Final/yota-react-native/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.2.4/res/color/common_google_signin_btn_tint.xml"
     },
     {
         "merged": "/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_light.xml",
         "source": "/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/color/abc_primary_text_material_light.xml"
     },
     {
-        "merged": "/home/achim/YOTA/yota-react-native/android/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_dark.xml",
-        "source": "/home/achim/YOTA/yota-react-native/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/color/abc_primary_text_disable_only_material_dark.xml"
-    },
-    {
         "merged": "/home/achim/YOTA/yota-react-native/android/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_dark.xml",
         "source": "/home/achim/YOTA/yota-react-native/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/color/abc_primary_text_material_dark.xml"
+    },
+    {
+        "merged": "/home/achim/YOTA/yota-react-native/android/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_dark.xml",
+        "source": "/home/achim/YOTA/yota-react-native/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/color/abc_primary_text_disable_only_material_dark.xml"
     },
     {
         "merged": "/home/achim/tja/yota-react-native/android/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_tint.xml",
@@ -52,16 +56,20 @@
         "source": "/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/color/switch_thumb_material_light.xml"
     },
     {
+        "merged": "/Users/hacktiv8/Desktop/anto/yota/yota-react-native/android/app/build/intermediates/res/merged/debug/color/abc_search_url_text.xml",
+        "source": "/Users/hacktiv8/Desktop/anto/yota/yota-react-native/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/color/abc_search_url_text.xml"
+    },
+    {
         "merged": "/home/achim/Final/yota-react-native/android/app/build/intermediates/res/merged/debug/color/switch_thumb_material_dark.xml",
         "source": "/home/achim/Final/yota-react-native/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/color/switch_thumb_material_dark.xml"
     },
     {
-        "merged": "/home/achim/tja/yota-react-native/android/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_light.xml",
-        "source": "/home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/color/abc_primary_text_material_light.xml"
-    },
-    {
         "merged": "/home/achim/tja/yota-react-native/android/app/build/intermediates/res/merged/debug/color/switch_thumb_material_dark.xml",
         "source": "/home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/color/switch_thumb_material_dark.xml"
+    },
+    {
+        "merged": "/home/achim/tja/yota-react-native/android/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_light.xml",
+        "source": "/home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/color/abc_primary_text_material_light.xml"
     },
     {
         "merged": "/home/achim/YOTA/yota-react-native/android/app/build/intermediates/res/merged/debug/color/abc_search_url_text.xml",
@@ -70,6 +78,10 @@
     {
         "merged": "/home/achim/Final/yota-react-native/android/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_dark.xml",
         "source": "/home/achim/Final/yota-react-native/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/color/abc_secondary_text_material_dark.xml"
+    },
+    {
+        "merged": "/Users/hacktiv8/Desktop/anto/yota/yota-react-native/android/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_light.xml",
+        "source": "/Users/hacktiv8/Desktop/anto/yota/yota-react-native/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/color/abc_primary_text_disable_only_material_light.xml"
     },
     {
         "merged": "/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_light.xml",
@@ -82,6 +94,10 @@
     {
         "merged": "/home/achim/tja/yota-react-native/android/app/build/intermediates/res/merged/debug/color/abc_search_url_text.xml",
         "source": "/home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/color/abc_search_url_text.xml"
+    },
+    {
+        "merged": "/Users/hacktiv8/Desktop/anto/yota/yota-react-native/android/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_dark.xml",
+        "source": "/Users/hacktiv8/Desktop/anto/yota/yota-react-native/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/color/abc_primary_text_disable_only_material_dark.xml"
     },
     {
         "merged": "/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_dark.xml",
@@ -112,12 +128,20 @@
         "source": "/home/achim/YOTA/yota-react-native/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/color/abc_primary_text_disable_only_material_light.xml"
     },
     {
+        "merged": "/Users/hacktiv8/Desktop/anto/yota/yota-react-native/android/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_light.xml",
+        "source": "/Users/hacktiv8/Desktop/anto/yota/yota-react-native/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/color/abc_secondary_text_material_light.xml"
+    },
+    {
         "merged": "/home/achim/Final/yota-react-native/android/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_dark.xml",
         "source": "/home/achim/Final/yota-react-native/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/color/abc_primary_text_material_dark.xml"
     },
     {
         "merged": "/home/achim/Final/yota-react-native/android/app/build/intermediates/res/merged/debug/color/switch_thumb_material_light.xml",
         "source": "/home/achim/Final/yota-react-native/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/color/switch_thumb_material_light.xml"
+    },
+    {
+        "merged": "/Users/hacktiv8/Desktop/anto/yota/yota-react-native/android/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_tint.xml",
+        "source": "/Users/hacktiv8/Desktop/anto/yota/yota-react-native/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.2.4/res/color/common_google_signin_btn_tint.xml"
     },
     {
         "merged": "/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_dark.xml",
@@ -148,8 +172,16 @@
         "source": "/home/achim/YOTA/yota-react-native/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.2.4/res/color/common_google_signin_btn_text_light.xml"
     },
     {
+        "merged": "/Users/hacktiv8/Desktop/anto/yota/yota-react-native/android/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_light.xml",
+        "source": "/Users/hacktiv8/Desktop/anto/yota/yota-react-native/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.2.4/res/color/common_google_signin_btn_text_light.xml"
+    },
+    {
         "merged": "/home/achim/tja/yota-react-native/android/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_dark.xml",
         "source": "/home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/color/abc_primary_text_material_dark.xml"
+    },
+    {
+        "merged": "/Users/hacktiv8/Desktop/anto/yota/yota-react-native/android/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_light.xml",
+        "source": "/Users/hacktiv8/Desktop/anto/yota/yota-react-native/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/color/abc_primary_text_material_light.xml"
     },
     {
         "merged": "/home/achim/Final/yota-react-native/android/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_light.xml",
@@ -158,6 +190,10 @@
     {
         "merged": "/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_light.xml",
         "source": "/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.2.4/res/color/common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "/Users/hacktiv8/Desktop/anto/yota/yota-react-native/android/app/build/intermediates/res/merged/debug/color/switch_thumb_material_dark.xml",
+        "source": "/Users/hacktiv8/Desktop/anto/yota/yota-react-native/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/color/switch_thumb_material_dark.xml"
     },
     {
         "merged": "/home/achim/tja/yota-react-native/android/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_light.xml",
@@ -180,6 +216,14 @@
         "source": "/home/achim/YOTA/yota-react-native/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/color/switch_thumb_material_dark.xml"
     },
     {
+        "merged": "/Users/hacktiv8/Desktop/anto/yota/yota-react-native/android/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_dark.xml",
+        "source": "/Users/hacktiv8/Desktop/anto/yota/yota-react-native/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/color/abc_primary_text_material_dark.xml"
+    },
+    {
+        "merged": "/Users/hacktiv8/Desktop/anto/yota/yota-react-native/android/app/build/intermediates/res/merged/debug/color/switch_thumb_material_light.xml",
+        "source": "/Users/hacktiv8/Desktop/anto/yota/yota-react-native/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/color/switch_thumb_material_light.xml"
+    },
+    {
         "merged": "/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/res/merged/debug/color/abc_search_url_text.xml",
         "source": "/home/ztap/Documents/PHASE 3/Final-Project/final-project-frontend/maptest/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/color/abc_search_url_text.xml"
     },
@@ -190,5 +234,9 @@
     {
         "merged": "/home/achim/tja/yota-react-native/android/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_light.xml",
         "source": "/home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/color/abc_secondary_text_material_light.xml"
+    },
+    {
+        "merged": "/Users/hacktiv8/Desktop/anto/yota/yota-react-native/android/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_dark.xml",
+        "source": "/Users/hacktiv8/Desktop/anto/yota/yota-react-native/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.2.4/res/color/common_google_signin_btn_text_dark.xml"
     }
 ]

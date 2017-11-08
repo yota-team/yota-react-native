@@ -59,7 +59,6 @@ class TimeSlider extends React.Component {
         title="Show Heatmap"
         color="#009FB7"
         />
-        <Text> </Text>
 
       </View>
     );
