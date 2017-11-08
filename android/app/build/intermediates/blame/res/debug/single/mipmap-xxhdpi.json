@@ -8,6 +8,10 @@
         "source": "/home/achim/tja/yota-react-native/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
     },
     {
+        "merged": "/home/achim/YOTA/yota-react-native/android/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_launcher.png",
+        "source": "/home/achim/YOTA/yota-react-native/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
         "merged": "/home/achim/Final/yota-react-native/android/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_launcher.png",
         "source": "/home/achim/Final/yota-react-native/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
     }

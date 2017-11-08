@@ -21,6 +21,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="/home/achim/YOTA/yota-react-native/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-okhttp3/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c03c08c9934b23c8c09c803345ec51a74119127b">
+        <dex dex="/home/achim/YOTA/yota-react-native/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-okhttp3-1.3.0_160eafaaf6698422135cf31c6e9594d38bc7ba97.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/1.3.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
@@ -36,6 +45,33 @@
         revision="23.0.1"
         sha1="dd1d0d84da2cff18f741c63a9c3af7d9aa89fdd6">
         <dex dex="/home/achim/tja/yota-react-native/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-base-10.2.4_793da7835f11a02ca88115ce0ccc1c7f6a7f162a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/achim/YOTA/yota-react-native/android/app/build/intermediates/exploded-aar/com.google.maps.android/android-maps-utils/0.4.4/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="6f57b76211a1d7b0c1f18873af59faad95664681">
+        <dex dex="/home/achim/YOTA/yota-react-native/android/app/build/intermediates/pre-dexed/debug/com.google.maps.android-android-maps-utils-0.4.4_35d9d40da9c1675cdcc3c93e32613a829d7f2b5e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/achim/YOTA/yota-react-native/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
+        <dex dex="/home/achim/YOTA/yota-react-native/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.0.0_a5930afa26f75776b6b17d77ed7c3a10dc1382db.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/achim/YOTA/yota-react-native/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="/home/achim/YOTA/yota-react-native/android/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.0.1_c19a64fc8c8452409c0555b6008f0fa60f23891a.jar" />
     </item>
     <item
         is-multidex="false"
@@ -63,6 +99,15 @@
         revision="23.0.1"
         sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
         <dex dex="/home/achim/tja/yota-react-native/android/app/build/intermediates/pre-dexed/debug/jsr305-3.0.0_7fd57810206a4e7d402233108764d81e5f15416d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/achim/YOTA/yota-react-native/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="48c7f54c2515a2312d3a4481d10c43fbb807f3af">
+        <dex dex="/home/achim/YOTA/yota-react-native/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-1.3.0_ac336638f08ca137481b1c06fecd885e9c2d3efa.jar" />
     </item>
     <item
         is-multidex="false"
@@ -129,6 +174,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="/home/achim/YOTA/yota-react-native/android/app/build/intermediates/exploded-aar/com.facebook.soloader/soloader/0.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
+        <dex dex="/home/achim/YOTA/yota-react-native/android/app/build/intermediates/pre-dexed/debug/com.facebook.soloader-soloader-0.1.0_a3025a18ec5b5b6e6218b9faa74a5eff456beaba.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/home/achim/Final/yota-react-native/android/app/build/intermediates/exploded-aar/com.google.maps.android/android-maps-utils/0.4.4/jars/classes.jar"
         jumboMode="false"
         optimize="true"
@@ -174,6 +228,24 @@
     </item>
     <item
         is-multidex="false"
+        jar="/home/achim/YOTA/yota-react-native/android/app/build/intermediates/exploded-aar/com.facebook.fbui.textlayoutbuilder/textlayoutbuilder/1.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
+        <dex dex="/home/achim/YOTA/yota-react-native/android/app/build/intermediates/pre-dexed/debug/com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_41cc9584213725f9d77a89a64d4175a736008abe.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/achim/YOTA/yota-react-native/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fresco/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="fe85b87215e405f5917d40ae4960488ac9224b74">
+        <dex dex="/home/achim/YOTA/yota-react-native/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fresco-1.3.0_3a4463bb149dafc2f594c2301cd29a975745f66d.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/home/achim/tja/yota-react-native/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/10.2.4/jars/classes.jar"
         jumboMode="false"
         optimize="true"
@@ -201,12 +273,30 @@
     </item>
     <item
         is-multidex="false"
+        jar="/home/achim/YOTA/yota-react-native/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/10.2.4/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="6d0d5e86f5b7203834df01ed78ebfdd5cbf74d48">
+        <dex dex="/home/achim/YOTA/yota-react-native/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-maps-10.2.4_621563a6eb50e0e9020259012a3796234d2abab0.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/home/achim/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/24.0.0/support-annotations-24.0.0.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
         <dex dex="/home/achim/tja/yota-react-native/android/app/build/intermediates/pre-dexed/debug/support-annotations-24.0.0_b342889a3a3b0a23ec78cffd896cd3e4698b5e33.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/achim/YOTA/yota-react-native/android/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c65a2e39d54023bac3aef64a2f0cff89289c7ff6">
+        <dex dex="/home/achim/YOTA/yota-react-native/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-drawee-1.3.0_e8c0829dbd7eddd02e4ccfb4a5024ee5c63a185d.jar" />
     </item>
     <item
         is-multidex="false"
@@ -219,12 +309,21 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/achim/Final/yota-react-native/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
+        jar="/home/achim/YOTA/yota-react-native/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/libs/internal_impl-24.0.0.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
-        <dex dex="/home/achim/Final/yota-react-native/android/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.0.1_577f24d99779b44d06865ccccaa2f9e5931ba30d.jar" />
+        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
+        <dex dex="/home/achim/YOTA/yota-react-native/android/app/build/intermediates/pre-dexed/debug/internal_impl-24.0.0_b29b37b7087af6a936078328c55874ba81a49b36.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/achim/YOTA/yota-react-native/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.49.5/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="610b957661a666d16b2cd4664c6bf4370226dfd2">
+        <dex dex="/home/achim/YOTA/yota-react-native/android/app/build/intermediates/pre-dexed/debug/com.facebook.react-react-native-0.49.5_5b67886a60a8b56fad14b28b7d33bacf2fb64e61.jar" />
     </item>
     <item
         is-multidex="false"
@@ -291,6 +390,24 @@
     </item>
     <item
         is-multidex="false"
+        jar="/home/achim/YOTA/yota-react-native/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.49.5/jars/libs/infer-annotations-4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
+        <dex dex="/home/achim/YOTA/yota-react-native/android/app/build/intermediates/pre-dexed/debug/infer-annotations-4.0_54a05bf1a4e20efa0b0ffdc839d2141e4d51303c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/achim/YOTA/yota-react-native/android/app/build/intermediates/exploded-aar/Yota/react-native-vector-icons/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="722e34ba5d4009c2551aca051aee8bd56cbdc19c">
+        <dex dex="/home/achim/YOTA/yota-react-native/android/app/build/intermediates/pre-dexed/debug/Yota-react-native-vector-icons-unspecified_1fbff7474f9c5a6d8f2ee15c82ff10ea57628e8c.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/home/achim/Final/yota-react-native/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/1.3.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
@@ -315,6 +432,24 @@
         revision="23.0.1"
         sha1="48c7f54c2515a2312d3a4481d10c43fbb807f3af">
         <dex dex="/home/achim/tja/yota-react-native/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-1.3.0_9917c0dbf15e71f76ef5bf014e8a7dd703595ed1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/achim/YOTA/yota-react-native/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/10.2.4/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="5803db663655ef5cb38c6bcb17ba326fdb9edfbd">
+        <dex dex="/home/achim/YOTA/yota-react-native/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-tasks-10.2.4_6cff377d409c1bd3656cb1d32c07eaf1af42e0e3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/achim/YOTA/yota-react-native/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.2.4/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="dd1d0d84da2cff18f741c63a9c3af7d9aa89fdd6">
+        <dex dex="/home/achim/YOTA/yota-react-native/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-base-10.2.4_3ed39e1f19255c7d41a171cf0b8c95cdc9a688f4.jar" />
     </item>
     <item
         is-multidex="false"
@@ -363,12 +498,39 @@
     </item>
     <item
         is-multidex="false"
+        jar="/home/achim/YOTA/yota-react-native/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="72128af126ddd7d6252da9357fe560d3abcdfb0c">
+        <dex dex="/home/achim/YOTA/yota-react-native/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-base-1.3.0_624de290db2871f57dbb879712d69ee38e388497.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/home/achim/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-urlconnection/3.6.0/3f9b16b774f2c36cfd86dd2053d0b3059531dacc/okhttp-urlconnection-3.6.0.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="3f9b16b774f2c36cfd86dd2053d0b3059531dacc">
         <dex dex="/home/achim/tja/yota-react-native/android/app/build/intermediates/pre-dexed/debug/okhttp-urlconnection-3.6.0_6535903b2d4ec0fea03c5ab34d6cca9f05f008b2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/achim/YOTA/yota-react-native/android/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/10.2.4/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="9ed08fab37c3a572da1d9ed2bf2e36c8d3e2bc48">
+        <dex dex="/home/achim/YOTA/yota-react-native/android/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-basement-10.2.4_e97ae52660524a7b6c866b9d56cbd58d69dc3bc5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/achim/YOTA/yota-react-native/android/app/build/intermediates/exploded-aar/Yota/react-native-maps/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="e5e16d62597b7c96ba25da84249338184e1c4851">
+        <dex dex="/home/achim/YOTA/yota-react-native/android/app/build/intermediates/pre-dexed/debug/Yota-react-native-maps-unspecified_4a1cd21f4fc44ab360fa33194fe506201356b173.jar" />
     </item>
     <item
         is-multidex="false"
@@ -414,6 +576,15 @@
         revision="23.0.1"
         sha1="37345de2ed2772f385eaeec37a9c2ff0fea99ad7">
         <dex dex="/home/achim/tja/yota-react-native/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fbcore-1.3.0_fecb733fe5bb92163e1ee6a0ebab4c93a6513c70.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/achim/YOTA/yota-react-native/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="37345de2ed2772f385eaeec37a9c2ff0fea99ad7">
+        <dex dex="/home/achim/YOTA/yota-react-native/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fbcore-1.3.0_6f02a9d5a80f029b9c76e618663e924e1519f304.jar" />
     </item>
 
 </items>

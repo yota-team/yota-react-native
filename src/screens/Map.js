@@ -18,7 +18,8 @@ import Polyline from '@mapbox/polyline';
 const { width, height } = Dimensions.get('window');
 import { actionSetLoading } from '../../actions/action'
 
-import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete'
+// import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete'
+import { GooglePlacesAutocomplete } from './MapSearch'
 
 import TimeSlider from './TimeSlider'
 
@@ -236,7 +237,7 @@ class HeatmapTest extends React.Component {
                 }}
 
                 query={{
-                     key: 'AIzaSyDX0Js5Ax8t-j0ipagQkQ7Qlqg8KBajvhc',
+                     key: 'AIzaSyAefGTyzMttU7s4nBLWYBsxFt7GAsVR4pc',
                      language: 'en',
                    }}
               />
@@ -281,7 +282,7 @@ class HeatmapTest extends React.Component {
                 }}
 
                 query={{
-                     key: 'AIzaSyDX0Js5Ax8t-j0ipagQkQ7Qlqg8KBajvhc',
+                     key: 'AIzaSyAefGTyzMttU7s4nBLWYBsxFt7GAsVR4pc',
                      language: 'en',
                    }}
               />
