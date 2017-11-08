@@ -1,6 +1,7 @@
 import React from 'react';
 import { Image } from 'react-native'
 import MapView from 'react-native-maps';
+import axios from 'axios'
 
 import {
   StyleSheet,
@@ -51,14 +52,55 @@ class HeatmapTest extends React.Component {
       showSliderStatus: true,
       changeSlider: true,
       address1: null,
-      address2: null
+      address2: null,
+      list_of_resto: []
     };
   }
   static navigationOptions = {
     title: 'Home'
   };
 
+  // markRestos() {
+  //   if (this.state.list_of_resto.length !== 0) {
+  //     this.state.list_of_resto.map((data, idx) => {
+  //       let coords = {
+  //         latitude: parseFloat(data.restaurant.location.latitude),
+  //         longitude: parseFloat(data.restaurant.location.longitude)
+  //       }
+  //       console.log('ini coords:', coords);
+  //       return (
+  //         <View>
+  //           <MapView.Marker draggable
+  //           coordinate={coords}
+  //           pinColor={'#474744'} />
+  //         </View>
+  //       )
+  //     })
+  //   }
+  // }
 
+  getNearbyResto() {
+    axios({
+      method: 'get',
+      url: `https://developers.zomato.com/api/v2.1/geocode?lat=${this.state.latitude}&lon=${this.state.longitude}`,
+      headers: {
+        'user-key': '29dfd748ca07eb3f9c2fe121415fa135'
+      }
+    })
+    .then(response => {
+      if (this.state.list_of_resto.length == 0) {
+        this.setState({list_of_resto: response.data.nearby_restaurants})
+      } else {
+        this.setState({list_of_resto: []})
+      }
+      // this.markRestos()
+      console.log(this.state.list_of_resto);
+      // alert(JSON.stringify(this.state.list_of_resto))
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
 
   getLine() {
       this.getDirections(`${this.state.coordinate.latitude.toString()}, ${this.state.coordinate.longitude.toString()}`, `${this.state.coordinate2.latitude.toString()}, ${this.state.coordinate2.longitude.toString()}`)
@@ -179,10 +221,18 @@ class HeatmapTest extends React.Component {
     if (this.state.showSliderStatus) {
       if(!this.state.changeSlider) {
         return (
-          <View style={{width: 300, height: 230, backgroundColor: '#2D2D34', opacity: 0.9, padding: 15, borderRadius: 15, marginTop: -10, margin: 15}}>
+          <View style={{width: 300, height: 240, backgroundColor: '#2D2D34', opacity: 0.9, padding: 15, borderRadius: 15, marginTop: -10, margin: 15}}>
             <TimeSlider/>
+            <Button
+              onPress={() => {
+                return (
+                  this.getNearbyResto()
+                )
+              }}
+              title="show nearby resto"
+              color="#252627"
+            />
             {this.showTripDetail()}
-            <Text> </Text>
             <Button
               onPress={() => {
                 return (
@@ -196,7 +246,7 @@ class HeatmapTest extends React.Component {
         )
       } else {
         return (
-          <View style={{width: 300, height: 230, backgroundColor: '#2D2D34', position: 'relative', opacity: 0.9, padding: 15, borderRadius: 15, marginTop: -10, margin: 15}}>
+          <View style={{width: 300, height: 240, backgroundColor: '#2D2D34', position: 'relative', opacity: 0.9, padding: 15, borderRadius: 15, marginTop: -10, margin: 15}}>
 
               <Text style={{color: 'white'}}>Plan Trip Today</Text>
               <GooglePlacesAutocomplete
@@ -360,6 +410,20 @@ class HeatmapTest extends React.Component {
         followUserLocation = {true}
         showsMyLocationButton={true}
       >
+      {this.state.list_of_resto.map((data, idx) => {
+        let coords = {
+          latitude: parseFloat(data.restaurant.location.latitude),
+          longitude: parseFloat(data.restaurant.location.longitude)
+        }
+        console.log('ini coords:', coords);
+        return (
+          <View key={idx}>
+            <MapView.Marker
+            coordinate={coords}
+            pinColor={'#474744'} />
+          </View>
+        )
+      })}
       {this.mapMarker()}
       {this.pointHeat()}
       </MapView>
