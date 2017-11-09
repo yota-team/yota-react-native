@@ -54,10 +54,11 @@ const defaultStyles = {
   powered: {},
   listView: {
     // flex: 1,
-    zIndex: 999,
+    zIndex: 99,
     position: 'absolute',
     top: 57,
-    backgroundColor: '#ffffff'
+    backgroundColor: '#FFFFFF',
+    color: 'white'
   },
   row: {
     padding: 13,

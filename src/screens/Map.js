@@ -2,15 +2,19 @@ import React from 'react';
 import { Image } from 'react-native'
 import MapView from 'react-native-maps';
 
+import axios from 'axios'
+import Modal from 'react-native-modalbox'
+import { Text } from 'react-native-elements'
+
 import {
   StyleSheet,
   View,
-  Text,
   Dimensions,
   TouchableOpacity,
   ActivityIndicator,
   TouchableHighlight,
-  Button
+  Button,
+  ScrollView
 } from 'react-native';
 import { connect } from 'react-redux'
 import Polyline from '@mapbox/polyline';
@@ -18,8 +22,8 @@ import Polyline from '@mapbox/polyline';
 const { width, height } = Dimensions.get('window');
 import { actionSetLoading } from '../../actions/action'
 
-// import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete'
-import { GooglePlacesAutocomplete } from './MapSearch'
+import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete'
+// import { GooglePlacesAutocomplete } from './MapSearch'
 
 import TimeSlider from './TimeSlider'
 
@@ -51,12 +55,38 @@ class HeatmapTest extends React.Component {
       showSliderStatus: true,
       changeSlider: true,
       address1: null,
-      address2: null
+      address2: null,
+      list_of_resto: [],
+      selectedResto: {}
     };
   }
   static navigationOptions = {
     title: 'Home'
   };
+
+  getNearbyResto() {
+    this.getCurrentPosition()
+    axios({
+      method: 'get',
+      url: `https://developers.zomato.com/api/v2.1/geocode?lat=${this.state.latitude}&lon=${this.state.longitude}`,
+      headers: {
+        'user-key': '29dfd748ca07eb3f9c2fe121415fa135'
+      }
+    })
+    .then(response => {
+      if (this.state.list_of_resto.length == 0) {
+        this.setState({list_of_resto: response.data.nearby_restaurants})
+      } else {
+        this.setState({list_of_resto: []})
+      }
+      // this.markRestos()
+      console.log(this.state.list_of_resto);
+      // alert(JSON.stringify(this.state.list_of_resto))
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
 
 
 
@@ -64,7 +94,7 @@ class HeatmapTest extends React.Component {
       this.getDirections(`${this.state.coordinate.latitude.toString()}, ${this.state.coordinate.longitude.toString()}`, `${this.state.coordinate2.latitude.toString()}, ${this.state.coordinate2.longitude.toString()}`)
   }
 
-  componentDidMount() {
+  getCurrentPosition() {
     // this.getLine()
     navigator.geolocation.getCurrentPosition(
       (position) => {
@@ -87,6 +117,10 @@ class HeatmapTest extends React.Component {
       },
       { enableHighAccuracy: true, timeout: 10000},
     );
+  }
+
+  componentDidMount() {
+    this.getCurrentPosition()
   }
 
   async getDirections(startLoc, destinationLoc) {
@@ -168,7 +202,7 @@ class HeatmapTest extends React.Component {
             })
           )
         }}
-        title="Show Trip Detail"
+        title="Trip Detail"
         color="#E89005"
         />
       )
@@ -179,10 +213,18 @@ class HeatmapTest extends React.Component {
     if (this.state.showSliderStatus) {
       if(!this.state.changeSlider) {
         return (
-          <View style={{width: 300, height: 230, backgroundColor: '#2D2D34', opacity: 0.9, padding: 15, borderRadius: 15, marginTop: -10, margin: 15}}>
+          <View style={{width: 300, height: 240, backgroundColor: '#2D2D34', opacity: 0.9, padding: 15, borderRadius: 15, marginTop: -10, margin: 15}}>
             <TimeSlider/>
+            <Button
+              onPress={() => {
+                return (
+                  this.getNearbyResto()
+                )
+              }}
+              title="nearby resto"
+              color="#BF211E"
+            />
             {this.showTripDetail()}
-            <Text> </Text>
             <Button
               onPress={() => {
                 return (
@@ -196,7 +238,7 @@ class HeatmapTest extends React.Component {
         )
       } else {
         return (
-          <View style={{width: 300, height: 230, backgroundColor: '#2D2D34', position: 'relative', opacity: 0.9, padding: 15, borderRadius: 15, marginTop: -10, margin: 15}}>
+          <View style={{width: 300, height: 240, backgroundColor: '#2D2D34', position: 'relative', opacity: 0.9, padding: 15, borderRadius: 15, marginTop: -10, margin: 15}}>
 
               <Text style={{color: 'white'}}>Plan Trip Today</Text>
               <GooglePlacesAutocomplete
@@ -299,7 +341,7 @@ class HeatmapTest extends React.Component {
                         this.changeSliderStatus()
                       )
                     }}
-                    title="Show Heatmap"
+                    title="Next"
                     color="#E89005"
                   />
               </View>
@@ -343,11 +385,41 @@ class HeatmapTest extends React.Component {
     });
   }
 
+  showdataModal() {
+    if (this.state.selectedResto.restaurant) {
+      return (
+        <ScrollView style={{ margin: 20 }}>
+          <Text h2 style={{ color: '#000' }}>{this.state.selectedResto.restaurant.name}</Text>
+          <Text h4 style={{ marginTop: 5, color: '#000' }}>{this.state.selectedResto.restaurant.user_rating.aggregate_rating} ({this.state.selectedResto.restaurant.user_rating.rating_text})</Text>
+          <Text style={{ marginTop: 5, color: '#000' }}>Price range: {this.state.selectedResto.restaurant.price_range}</Text>
+          <Text style={{ marginTop: 5, color: '#000' }}>Cuisines: {this.state.selectedResto.restaurant.cuisines}</Text>
+          <Text style={{ marginTop: 5, color: '#000' }}>Address: {this.state.selectedResto.restaurant.location.address}</Text>
+          <Image
+            style={{width: 150, height: 150, marginTop: 10}}
+            source={{uri: this.state.selectedResto.restaurant.featured_image}}
+          />
+        </ScrollView>
+      )
+    }
+  }
+  selectResto(data) {
+    this.setState({selectedResto: data})
+    console.log(this.state.selectedResto)
+    this.refs.modal1.open()
+  }
+
   render () {
+
     // this.getLine()
     return (
     <View style={styles.container}>
-
+      <Modal
+        entry={"bottom"}
+        style={[styles.modal, styles.modal1]}
+        ref={"modal1"}
+      >
+        {this.showdataModal()}
+      </Modal>
       <MapView
         style={styles.map}
         initialRegion={{
@@ -360,19 +432,36 @@ class HeatmapTest extends React.Component {
         followUserLocation = {true}
         showsMyLocationButton={true}
       >
+      {this.state.list_of_resto.map((data, idx) => {
+          let coords = {
+            latitude: parseFloat(data.restaurant.location.latitude),
+            longitude: parseFloat(data.restaurant.location.longitude)
+          }
+          // console.log('ini coords:', coords);
+          return (
+            <View key={idx}>
+              <MapView.Marker
+              coordinate={coords}
+              image={require('../images/g666.png')}
+              style={{ width: 50, height: 50 }}
+              onPress={ () => this.selectResto(this.state.list_of_resto[idx])}
+              />
+            </View>
+          )
+        })}
       {this.mapMarker()}
       {this.pointHeat()}
       </MapView>
 
-        <Button
-          onPress={() => {
-            return (
-              this.toggleShowSliderStatus()
-            )
-          }}
-          title="menu"
-          color="#757780"
-        />
+
+        <TouchableHighlight
+          onPress={() => this.toggleShowSliderStatus()}
+          underlayColor='#fff'>
+            <Image
+              style={{width: 40, height: 40}}
+              source={this.state.showSliderStatus ? require('../images/down.png') : require('../images/up.png')}
+            />
+        </TouchableHighlight>
         <Text> </Text>
         {this.toolBar()}
 
@@ -384,6 +473,16 @@ class HeatmapTest extends React.Component {
 
 
 let styles = StyleSheet.create({
+  modal: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 10
+  },
+  modal1: {
+    height: 400,
+    width: 300,
+    backgroundColor: "#fff"
+  },
   container: {
     position: 'absolute',
     top: 0,

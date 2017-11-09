@@ -56,11 +56,9 @@ class TimeSlider extends React.Component {
         {this.sliderBar()}
         <Button
         onPress={() => {this.props.getDataPositions({hour: this.props.hour, minute: this.props.minute}), this.props.setLoading(true)}}
-        title="Show Heatmap"
+        title="Heatmap"
         color="#009FB7"
         />
-        <Text> </Text>
-
       </View>
     );
   }
